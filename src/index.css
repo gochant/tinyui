@@ -987,6 +987,41 @@ input[type="checkbox"] {
   filter: alpha(opacity=60);
   opacity: .6;
 }
+.tt-query {
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+.tt-hint {
+  color: #999;
+}
+.tt-menu {
+  min-width: 200px;
+  padding: 5px 0;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 1px;
+  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+}
+.tt-suggestion {
+  padding: 3px 20px;
+  font-size: 12px;
+  line-height: 1.42857143;
+}
+.tt-suggestion:hover {
+  cursor: pointer;
+  color: #ffffff;
+  background-color: #337ab7;
+}
+.tt-suggestion.tt-cursor {
+  color: #ffffff;
+  background-color: #337ab7;
+}
+.tt-suggestion p {
+  margin: 0;
+}
 /* �Զ�����ʽ */
 /* 公共样式 */
 textarea {
@@ -1194,4 +1229,7 @@ body.desktop .page-content {
   background-color: #f3f3f3;
   border: 1px solid #ccc;
   border-width: 0 1px 0 0;
+}
+.modal-dialog.ui-dialog {
+  margin: 0 auto;
 }

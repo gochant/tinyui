@@ -55,6 +55,12 @@
                                 </div>
                             </div>
                             <div class="form-group">
+                                <label class="col-xs-2 control-label">自动完成</label>
+                                <div class="col-xs-10">
+                                    <input class="typeahead form-control" type="text" placeholder="States of USA">
+                                </div>
+                            </div>
+                            <div class="form-group">
                                 <div class="col-md-offset-2 col-md-10">
                                     <div class="checkbox">
                                         <label for="RememberMe">
@@ -106,6 +112,7 @@
     <script src="../bower_components/smalot-bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
     <script src="../bower_components/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js"></script>
     <script src="../bower_components/noty/js/noty/packaged/jquery.noty.packaged.js"></script>
+    <script src="../bower_components/typeahead.js/dist/typeahead.jquery.js"></script>
     <script>
         $.validator.setDefaults({
             highlight: function (element) {
@@ -122,6 +129,8 @@
             //,
             //startDate: new Date('1999/01/01')
         });
+
+        // noty
         noty({
             text: 'NOTY - a jquery notification library!',
             layout: 'topCenter',
@@ -133,6 +142,51 @@
                 speed: 500 // opening & closing animation speed
             }
         });
+
+
+
+        var substringMatcher = function (strs) {
+            return function findMatches(q, cb) {
+                var matches, substringRegex;
+
+                // an array that will be populated with substring matches
+                matches = [];
+
+                // regex used to determine if a string contains the substring `q`
+                substrRegex = new RegExp(q, 'i');
+
+                // iterate through the pool of strings and for any string that
+                // contains the substring `q`, add it to the `matches` array
+                $.each(strs, function (i, str) {
+                    if (substrRegex.test(str)) {
+                        matches.push(str);
+                    }
+                });
+
+                cb(matches);
+            };
+        };
+
+        var states = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California',
+          'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii',
+          'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana',
+          'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota',
+          'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire',
+          'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota',
+          'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island',
+          'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont',
+          'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
+        ];
+
+        $('.typeahead').typeahead({
+            hint: true,
+            highlight: true,
+            minLength: 1
+        }, {
+            name: 'states',
+            source: substringMatcher(states)
+        });
+
     </script>
 </body>
 </html>

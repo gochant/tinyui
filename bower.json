@@ -13,7 +13,8 @@
         "jquery.scrollbar": "latest",
         "jstree-bootstrap-theme": "latest",
         "jquery.layout": "latest",
-        "jquery-file-upload": "latest"
+        "jquery-file-upload": "latest",
+        "typeahead.js": "latest"
     },
     "devDependencies": {
         "requirejs-text": "latest",
