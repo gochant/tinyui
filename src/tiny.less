@@ -1,0 +1,194 @@
+
+/* 公共样式 */
+
+textarea {
+    resize: vertical;
+    max-height: 100px;
+}
+
+.header .navbar-right {
+    margin-right: 0;
+}
+
+body > .header {
+    z-index: 30;
+}
+
+.fn-wnd,
+.ver-view,
+form,
+.body,
+.tabs-left {
+    height: 100%;
+}
+
+.nav-tabs-custom {
+    box-shadow: none;
+    margin-bottom: 0;
+
+    > .tab-content {
+        padding: 0;
+    }
+}
+
+.fn-wnd {
+    min-width: 300px;
+    min-height: 100px;
+}
+
+.nodata {
+    line-height: 70px;
+}
+
+.ui-dialog-loading {
+    margin: 0 auto;
+}
+
+
+/* 一些帮助工具类 */
+
+.p15 {
+    padding: 15px;
+}
+
+.p5 {
+    padding: 5px;
+}
+
+.p10 {
+    padding: 10px;
+}
+
+.w150 {
+    width: 150px;
+}
+
+.tc {
+    text-align: center;
+}
+
+.mt5 {
+    margin-top: 5px;
+}
+
+
+/* 当表格在form中呈现时的样式 */
+.table-form.table {
+    tr > td {
+        padding: 0;
+        vertical-align: middle;
+        text-align: center;
+        border: 1px solid #A1A1A1;
+
+        &.editable {
+            background: #eef5f5;
+        }
+
+        label {
+            padding: 0 5px;
+            margin: 0;
+            font-weight: normal;
+        }
+    }
+
+    .form-control {
+        padding: 2px 6px;
+        border: 2px solid transparent;
+        background: none;
+        -moz-box-shadow: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+
+        &:focus {
+            border: 2px solid #66afe9;
+        }
+    }
+}
+// --------
+// 验证相关样式
+/* 隐藏默认的验证标签 */
+.has-feedback .form-control-feedback.field-validation-valid {
+    display: none;
+}
+
+.field-validation-error {
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+.has-feedback .form-control {
+    padding-right: 25px;
+}
+// 简单两栏布局
+.wrapper {
+    .side {
+        float: left;
+        width: 180px;
+    }
+
+    .content {
+        margin-left: 180px;
+    }
+}
+// 扩展 box： box-table-like
+.box-table-like {
+    border: 0;
+    border-top: 1px solid #E5E5E5;
+
+    .box-header {
+        border-bottom: 2px solid #dddddd;
+        color: #707070;
+        background: #F2F2F2;
+        padding: 3px 0 4px 10px;
+        font-weight: bold;
+    }
+}
+
+.side-bordered {
+    border: 1px solid #E5E5E5;
+    border-bottom-width: 0;
+    border-left-width: 0;
+}
+// 桌面布局，全屏
+body.desktop {
+    zoom: 1;
+    overflow: hidden;
+    width: auto;
+    height: auto;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    .main-container,
+    .main-content,
+    .page-content,
+    .full {
+        height: 100%;
+    }
+
+    .page-content {
+        padding: 0;
+    }
+}
+// jquery layout 样式
+
+@panelBorderStyle: 0;
+
+.ui-layout-pane-west {
+    border-right: @panelBorderStyle;
+}
+
+.ui-layout-pane-east {
+    border-left: @panelBorderStyle;
+}
+
+.ui-layout-pane-south {
+    border-top: @panelBorderStyle;
+}
+
+.ui-layout-pane-north {
+    border-bottom: @panelBorderStyle;
+}

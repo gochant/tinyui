@@ -1,0 +1,37 @@
+.enable_utility_separator() when(@enable-utility-separator = true) {
+    //<hr /> like spacing by using div, e.g <div class="hr hr-32"></div>
+    .hr {
+        display: block;
+        height: 0;
+        overflow: hidden;
+        font-size: 0;
+        border-width: 1px 0 0 0;
+        border-top: 1px solid #E3E3E3;
+        margin: 12px 0;
+        border-top-color: rgba(0, 0, 0, 0.11);
+    }
+
+    .hr-double {
+        height: 3px;
+        border-top: 1px solid #E3E3E3;
+        border-bottom: 1px solid #E3E3E3;
+        border-top-color: rgba(0, 0, 0, 0.11);
+        border-bottom-color: rgba(0, 0, 0, 0.11);
+    }
+
+    .hr.dotted, .hr-dotted {
+        border-style: dotted;
+    }
+
+    .hrX (@index) when (@index > 0) {
+        .hr-@{index}, .hr@{index} {
+            margin: unit(@index, px) 0;
+        }
+
+        .hrX(@index - 2);
+    }
+
+    .hrX(@extend_level);
+}
+
+.enable_utility_separator();

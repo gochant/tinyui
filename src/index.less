@@ -1,0 +1,134 @@
+@thirdpartyPath: "../../../../vendor/";
+
+@enable-utility-space: true;
+@enable-utility-size: true;
+@enable-utility-separator: true;
+@enable-utility-layout: true;
+@enable-utility-header: true;
+@enable-utility-color: true;
+@enable-utility-box-model: true;
+
+@enable-tabs: true;
+@enable-tab-positions: true;
+@enable-tab-options: true;
+
+@tab-border: #C5D0DC;
+@tab-color: #999;
+@tab-background-color: #F9F9F9;
+@tab-active-color: #576373;
+@tab-active-border: #4C8FBD;
+@tab-hover-color: #4C8FBD;
+@tab-active-background-color: #fff;
+@tab-color-blue: #7DB4D8; // 带颜色的选项卡
+
+//custom
+@extend_level: 16; // 循环生成样式的初始级别
+
+/* 第三方 */
+/*@import url('@{thirdpartyPath}smalot-bootstrap-datetimepicker/css/bootstrap-datetimepicker.css');
+@import url('@{thirdpartyPath}perfect-scrollbar/src/perfect-scrollbar.css');
+@import url('@{thirdpartyPath}jstree-bootstrap-theme/dist/themes/proton/style.css');*/
+
+
+@import "assets/bootstrap-theme-tiny/variables.less";
+@import "assets/bootstrap-theme-tiny/mixins.less";
+@import "assets/bootstrap-theme-tiny/theme.less";
+@import "assets/fonttiny/css/fonttiny.css";
+
+
+@import "mixins";
+/*@import "utility/utility";*/
+@import "tab/tab";
+@import "sidebar/sidebar";
+
+/* 补丁 */
+@import "patches/jstree-patch";
+@import "patches/kendoui-patch";
+
+/* 自定义样式 */
+@import "tiny";
+
+
+.example.sidebar {
+    float: none !important;
+}
+
+.label-transparent, .badge-transparent {
+    background-color: transparent;
+}
+
+
+@breadcrumb-margin-left: 5px;
+@panel-heading-height: 37px;
+@panel-heading-nav-top: 6px;
+
+.panel {
+
+    > .panel-heading {
+
+        &.clearfix {
+            height: @panel-heading-height;
+            line-height: @panel-heading-height;
+            padding: 0 5px;
+
+            .panel-title,
+            .panel-toolbar {
+                line-height: @panel-heading-height;
+                // fix input-group vertical-align bug!!
+                .form-group {
+                    line-height: @line-height-base;
+                }
+            }
+
+            .nav-tabs {
+                margin: 0;
+                border: 0;
+                top: @panel-heading-nav-top;
+            }
+        }
+    }
+
+    > .panel-body {
+        border-width: 0;
+        background-color: transparent;
+    }
+
+    > .panel-toolbar {
+        padding: @panel-footer-padding;
+        background: @panel-footer-bg;
+        border-bottom: 1px solid @panel-inner-border;
+    }
+}
+
+.panel-transparent {
+    box-shadow: none;
+
+    > .panel-heading {
+        border-bottom: 1px solid #DCE8F1;
+        padding-left: 3px;
+    }
+}
+
+.progress.progress-mini {
+    height: @line-height-computed * 0.5;
+
+    .progress-bar {
+        line-height: @line-height-computed * 0.5;
+    }
+}
+
+.fa {
+    display: inline-block;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1;
+}
+
+
+.sidebar-content{
+    background-color: @sidebar-background;
+    border: 1px solid #ccc;
+    border-width: 0 1px 0 0;
+}

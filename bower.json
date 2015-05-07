@@ -1,0 +1,22 @@
+{
+    "name": "test",
+    "dependencies": {
+        "jquery": "~1.11.x",
+        "html5shiv": "latest",
+        "respond": "latest",
+        "smalot-bootstrap-datetimepicker": "latest",
+        "jquery.inputmask": "latest",
+        "jquery-validation": "latest",
+        "jquery-validation-unobtrusive": "latest",
+        "noty": "latest",
+        "jquery-placeholder": "latest",
+        "jquery.scrollbar": "latest",
+        "jstree-bootstrap-theme": "latest",
+        "jquery.layout": "latest",
+        "jquery-file-upload": "latest"
+    },
+    "devDependencies": {
+        "requirejs-text": "latest",
+        "require-css": "latest"
+    }
+}
