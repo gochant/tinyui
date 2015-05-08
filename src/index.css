@@ -1382,6 +1382,41 @@ input[type="checkbox"] {
 .tt-suggestion p {
   margin: 0;
 }
+/* ui dialog 补丁 */
+.ui-dialog {
+  -moz-border-radius: 1px;
+  -webkit-border-radius: 1px;
+  border-radius: 1px;
+}
+.ui-dialog-header {
+  border-bottom: 1px solid #ccc;
+}
+.ui-dialog-close {
+  top: 9px;
+  right: 9px;
+}
+.ui-dialog-title {
+  padding: 10px;
+}
+.modal-footer {
+  padding: 10px;
+  border-top: 1px solid #ccc;
+}
+.ui-dialog-body.with-footer {
+  padding: 0;
+  padding-bottom: 46px;
+}
+.ui-dialog-content {
+  position: static;
+  /*padding: 20px;*/
+  overflow-y: auto;
+}
+.ui-dialog-content .footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
 /* �Զ�����ʽ */
 /* 公共样式 */
 textarea {
@@ -1592,4 +1627,5 @@ body.desktop .page-content {
 }
 .modal-dialog.ui-dialog {
   margin: 0 auto;
+  width: auto;
 }

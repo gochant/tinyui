@@ -96,8 +96,8 @@ define({
                 '            <button i="close" class="close" aria-hidden="true">×</button>' +
                 '            <h4 i="title" class="modal-title"></h4>' +
                 '        </div>' +
-                '        <div i="body" class="modal-body">' +
-                '            <div i="content"></div>' +
+                '        <div i="body" class="modal-body ui-dialog-body">' +
+                '            <div i="content" class="ui-dialog-content"></div>' +
                 '        </div>' +
                 '        <div i="footer" class="modal-footer">' +
                 '            <div i="statusbar" class="ui-dialog-statusbar"></div>' +
