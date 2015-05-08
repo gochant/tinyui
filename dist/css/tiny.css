@@ -1,4 +1,4 @@
-﻿/* ������ */
+/* ������ */
 /*@import url('@{thirdpartyPath}smalot-bootstrap-datetimepicker/css/bootstrap-datetimepicker.css');
 @import url('@{thirdpartyPath}perfect-scrollbar/src/perfect-scrollbar.css');
 @import url('@{thirdpartyPath}jstree-bootstrap-theme/dist/themes/proton/style.css');*/
@@ -819,8 +819,8 @@ input[type="checkbox"] {
 }
 @font-face {
   font-family: 'fonttiny';
-  src: url('font/fonttiny.eot?24928339');
-  src: url('font/fonttiny.eot?24928339#iefix') format('embedded-opentype'), url('font/fonttiny.woff?24928339') format('woff'), url('font/fonttiny.ttf?24928339') format('truetype'), url('font/fonttiny.svg?24928339#fonttiny') format('svg');
+  src: url('../font/fonttiny.eot?24928339');
+  src: url('../font/fonttiny.eot?24928339#iefix') format('embedded-opentype'), url('../font/fonttiny.woff?24928339') format('woff'), url('../font/fonttiny.ttf?24928339') format('truetype'), url('../font/fonttiny.svg?24928339#fonttiny') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -1184,14 +1184,14 @@ input[type="checkbox"] {
 .jstree-proton-responsive .jstree-icon,
 .jstree-proton-responsive .jstree-node > .jstree-ocl,
 .jstree-proton-responsive .jstree-themeicon {
-  background-image: url("patches/30px.png");
+  background-image: url("30px.png");
   background-size: 90px 180px;
 }
 .jstree-proton-responsive .jstree-container-ul {
   overflow: hidden;
 }
 .jstree-proton-responsive .jstree-icon {
-  background-image: url("patches/30px.png");
+  background-image: url("30px.png");
   background-size: 90px 180px;
   margin-top: 4px;
   width: 30px;
@@ -1205,7 +1205,7 @@ input[type="checkbox"] {
   margin-left: 30px;
   min-width: 30px;
   white-space: nowrap;
-  background-image: url("patches/30px.png");
+  background-image: url("30px.png");
   background-size: 90px 180px;
   background-position: -60px 0;
   background-repeat: repeat-y;
@@ -1239,12 +1239,12 @@ input[type="checkbox"] {
 .jstree-proton-responsive .jstree-themeicon {
   background-size: 90px 180px;
   background-position: -30px -30px;
-  background-image: url("patches/30px.png");
+  background-image: url("30px.png");
 }
 .jstree-proton-responsive .jstree-checkbox {
   background-size: 90px 180px;
   background-position: -30px -60px;
-  background-image: url("patches/30px.png");
+  background-image: url("30px.png");
 }
 .jstree-proton-responsive .jstree-open > .jstree-ocl {
   background-position: 0 0px !important;
@@ -1295,11 +1295,11 @@ input[type="checkbox"] {
   background-position: 0 0;
 }
 .jstree-proton-responsive .jstree-file {
-  background: url("patches/30px.png") 0 -120px no-repeat;
+  background: url("30px.png") 0 -120px no-repeat;
   background-size: 90px 180px;
 }
 .jstree-proton-responsive .jstree-folder {
-  background: url("patches/30px.png") -30px -30px no-repeat;
+  background: url("30px.png") -30px -30px no-repeat;
   background-size: 90px 180px;
 }
 .jstree-proton-responsive.jstree-rtl .jstree-node {
