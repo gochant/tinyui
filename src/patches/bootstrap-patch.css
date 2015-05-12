@@ -1,4 +1,50 @@
-﻿.pagination-sm > li > a,
+﻿.table > thead > tr > th {
+  vertical-align: middle;
+}
+input.form-control,
+div.form-control,
+.form-control,
+input {
+  box-shadow: none;
+}
+input.form-control:focus,
+div.form-control:focus,
+.form-control:focus,
+input:focus {
+  box-shadow: none;
+}
+.has-warning .form-control:focus {
+  box-shadow: none;
+}
+.has-success .form-control:focus {
+  box-shadow: none;
+}
+.has-error .form-control:focus {
+  box-shadow: none;
+}
+.btn:active {
+  box-shadow: none;
+}
+.list-group-item {
+  padding: 5px 10px;
+}
+.modal-header .close {
+  margin-top: 2px;
+}
+.label {
+  padding-left: 1em;
+  padding-right: 1em;
+  border-radius: 0;
+  font-weight: 300;
+}
+.badge {
+  font-weight: 300;
+}
+input[type="radio"],
+input[type="checkbox"] {
+  margin: 2px 0 0;
+}
+.pagination-sm > li > a,
 .pagination-sm > li > span {
   padding: 2px 8px;
 }

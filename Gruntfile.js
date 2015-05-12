@@ -45,7 +45,7 @@ module.exports = function (grunt) {
             production: {
                 options: {
                     modifyVars: {
-                        'font-url': '"../font/fonttiny"'
+                        'font-url': '"../fonts/fonttiny"'
                     }
                 },
                 files: {
@@ -58,7 +58,7 @@ module.exports = function (grunt) {
                 files: [
                   { expand: true, src: ['src/assets/bootstrap-theme-tiny/bootstrap.css'], dest: 'dist/css/', flatten: true },
                   { expand: true, src: ['src/assets/bootstrap-theme-tiny/bootstrap.js'], dest: 'dist/js/', flatten: true },
-                  { expand: true, src: ['src/font/*'], dest: 'dist/font/', flatten: true },
+                  { expand: true, src: ['src/fonts/*'], dest: 'dist/fonts/', flatten: true },
                   { expand: true, src: ['src/js/*'], dest: 'dist/js/', filter: 'isFile', flatten: true }
                 ]
             },

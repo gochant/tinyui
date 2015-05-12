@@ -819,8 +819,8 @@ input[type="checkbox"] {
 }
 @font-face {
   font-family: 'fonttiny';
-  src: url('../font/fonttiny.eot?24928339');
-  src: url('../font/fonttiny.eot?24928339#iefix') format('embedded-opentype'), url('../font/fonttiny.woff?24928339') format('woff'), url('../font/fonttiny.ttf?24928339') format('truetype'), url('../font/fonttiny.svg?24928339#fonttiny') format('svg');
+  src: url('../fonts/fonttiny.eot?24928339');
+  src: url('../fonts/fonttiny.eot?24928339#iefix') format('embedded-opentype'), url('../fonts/fonttiny.woff?24928339') format('woff'), url('../fonts/fonttiny.ttf?24928339') format('truetype'), url('../fonts/fonttiny.svg?24928339#fonttiny') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -1179,6 +1179,56 @@ input[type="checkbox"] {
 }
 /* '' */
 /* ���� */
+.table > thead > tr > th {
+  vertical-align: middle;
+}
+input.form-control,
+div.form-control,
+.form-control,
+input {
+  box-shadow: none;
+}
+input.form-control:focus,
+div.form-control:focus,
+.form-control:focus,
+input:focus {
+  box-shadow: none;
+}
+.has-warning .form-control:focus {
+  box-shadow: none;
+}
+.has-success .form-control:focus {
+  box-shadow: none;
+}
+.has-error .form-control:focus {
+  box-shadow: none;
+}
+.btn:active {
+  box-shadow: none;
+}
+.list-group-item {
+  padding: 5px 10px;
+}
+.modal-header .close {
+  margin-top: 2px;
+}
+.label {
+  padding-left: 1em;
+  padding-right: 1em;
+  border-radius: 0;
+  font-weight: 300;
+}
+.badge {
+  font-weight: 300;
+}
+input[type="radio"],
+input[type="checkbox"] {
+  margin: 2px 0 0;
+}
+.pagination-sm > li > a,
+.pagination-sm > li > span {
+  padding: 2px 8px;
+}
 /* ���� jstree �Ĳ��� */
 .jstree-proton-responsive .jstree-node,
 .jstree-proton-responsive .jstree-icon,
@@ -1431,7 +1481,6 @@ body > .header {
 }
 .fn-wnd,
 .ver-view,
-form,
 .body,
 .tabs-left {
   height: 100%;
@@ -1572,20 +1621,20 @@ body.desktop .page-content {
 .badge-transparent {
   background-color: transparent;
 }
-.panel > .panel-heading.clearfix {
+.panel .panel-heading.clearfix {
   height: 37px;
   line-height: 37px;
   padding: 0 5px;
 }
-.panel > .panel-heading.clearfix .panel-title,
-.panel > .panel-heading.clearfix .panel-toolbar {
+.panel .panel-heading.clearfix .panel-title,
+.panel .panel-heading.clearfix .panel-toolbar {
   line-height: 37px;
 }
-.panel > .panel-heading.clearfix .panel-title .form-group,
-.panel > .panel-heading.clearfix .panel-toolbar .form-group {
+.panel .panel-heading.clearfix .panel-title .form-group,
+.panel .panel-heading.clearfix .panel-toolbar .form-group {
   line-height: 1.42857143;
 }
-.panel > .panel-heading.clearfix .nav-tabs {
+.panel .panel-heading.clearfix .nav-tabs {
   margin: 0;
   border: 0;
   top: 6px;
@@ -1628,4 +1677,9 @@ body.desktop .page-content {
 .modal-dialog.ui-dialog {
   margin: 0 auto;
   width: auto;
+}
+.form-control.input-validation-error,
+.input-validation-error {
+  border-color: #d9534f;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
 }

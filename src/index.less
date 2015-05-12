@@ -43,10 +43,12 @@
 @import "icon/fonttiny.less";
 
 /* 补丁 */
+@import "patches/bootstrap-patch";
 @import "patches/jstree-patch";
 @import "patches/kendoui-patch";
 @import "patches/typeahead";
 @import "patches/ui-dialog-patch";
+
 
 /* 自定义样式 */
 @import "tiny";
@@ -67,7 +69,7 @@
 
 .panel {
 
-    > .panel-heading {
+    .panel-heading {
 
         &.clearfix {
             height: @panel-heading-height;
@@ -141,7 +143,8 @@
     width: auto;
 }
 
-.form-control.input-validation-error, .input-validation-error {
+.form-control.input-validation-error,
+.input-validation-error {
     border-color: @state-danger-text;
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
 }
