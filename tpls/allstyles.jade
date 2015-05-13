@@ -1,0 +1,42 @@
+﻿extends layout
+
+block content
+  .container
+    .bs-docs-section
+      .row
+        .col-lg-12
+          .page-header
+            h1#navbar Navbar
+      .row
+        .col-lg-12
+          .bs-component
+            include components/navbar-default.html
+          .bs-component
+            include components/navbar-inverse.html
+      // Buttons
+     div.bs-docs-section
+      .row
+        .col-lg-12
+          .page-header
+            h1#buttons Buttons
+      .row
+        .col-lg-6
+          p.bs-component
+            include components/buttons.html
+          p.bs-component
+            include components/buttons-disabled.html
+          p.bs-component
+            include components/buttons-group.html
+          p.bs-component
+            include components/buttons-size.html
+        .col-lg-6
+          p.bs-component
+            | <a href="#" class="btn btn-default btn-lg btn-block">Block level button</a>
+          p.bs-component
+            include components/buttons-justified.html
+          p.bs-component
+            include components/buttons-toolbar.html
+          p.bs-component
+            include components/buttons-vertical.html
+
+

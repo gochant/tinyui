@@ -1,0 +1,36 @@
+﻿doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    title Tiny:All Style
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    link(href="../dist/css/bootstrap.css", rel="stylesheet")
+    link(href="../dist/css/tiny.css", rel="stylesheet")
+    link(href="../assets/bootswatch.css", rel="stylesheet")
+
+    
+    | <!--[if lt IE 9]>
+    |   <script src="../bower_components/html5shiv/dist/html5shiv.js"></script>
+    |   <script src="../bower_components/respond/dest/respond.min.js"></script>
+    | <![endif]-->
+
+  body
+    block content
+
+    #source-modal.modal.fade
+      .modal-dialog.modal-lg
+        .modal-content
+          .modal-header
+            button.close(data-dismiss="modal", aria-hidden="true") &times;
+            h4.modal-title Source Code
+          .modal-body
+            pre
+    footer
+
+    script(src="../bower_components/jquery/dist/jquery.min.js")
+    script(src="../dist/js/bootstrap.js")
+    script(src="../dist/js/jquery.submenu.js")
+    script(src="../assets/bootswatch.js")
+    script(src="../assets/demo.js")
+
