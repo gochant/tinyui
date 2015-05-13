@@ -1,0 +1,51 @@
+
+@breadcrumb-margin-left: 5px;
+@panel-heading-height: 37px;
+@panel-heading-nav-top: 6px;
+
+.panel {
+
+    .panel-heading {
+
+        &.clearfix {
+            height: @panel-heading-height;
+            line-height: @panel-heading-height;
+            padding: 0 5px;
+
+            .panel-title,
+            .panel-toolbar {
+                line-height: @panel-heading-height;
+                // fix input-group vertical-align bug!!
+                .form-group {
+                    line-height: @line-height-base;
+                }
+            }
+
+            .nav-tabs {
+                margin: 0;
+                border: 0;
+                top: @panel-heading-nav-top;
+            }
+        }
+    }
+
+    > .panel-body {
+        border-width: 0;
+        background-color: transparent;
+    }
+
+    > .panel-toolbar {
+        padding: @panel-footer-padding;
+        background: @panel-footer-bg;
+        border-bottom: 1px solid @panel-inner-border;
+    }
+}
+
+.panel-transparent {
+    box-shadow: none;
+
+    > .panel-heading {
+        border-bottom: 1px solid #DCE8F1;
+        padding-left: 3px;
+    }
+}

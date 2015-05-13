@@ -56,6 +56,7 @@ module.exports = function (grunt) {
         copy: {
             main: {
                 files: [
+                  { expand: true, src: ['bower_components/smalot-bootstrap-datetimepicker/css/bootstrap-datetimepicker.css'], dest: 'dist/css/', flatten: true },
                   { expand: true, src: ['src/assets/bootstrap-theme-tiny/bootstrap.css'], dest: 'dist/css/', flatten: true },
                   { expand: true, src: ['src/assets/bootstrap-theme-tiny/bootstrap.js'], dest: 'dist/js/', flatten: true },
                   { expand: true, src: ['src/fonts/*'], dest: 'dist/fonts/', flatten: true },

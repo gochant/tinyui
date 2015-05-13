@@ -13,12 +13,8 @@ div.form-control:focus,
 input:focus {
   box-shadow: none;
 }
-.has-warning .form-control:focus {
-  box-shadow: none;
-}
-.has-success .form-control:focus {
-  box-shadow: none;
-}
+.has-warning .form-control:focus,
+.has-success .form-control:focus,
 .has-error .form-control:focus {
   box-shadow: none;
 }

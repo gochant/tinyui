@@ -10,6 +10,9 @@
     }
 }
 
+
+// 清除所有的阴影
+
 input.form-control,
 div.form-control,
 .form-control,
@@ -21,22 +24,20 @@ input {
     }
 }
 
-.has-warning .form-control:focus {
-    box-shadow: none;
-}
-
-.has-success .form-control:focus {
-    box-shadow: none;
-}
-
-.has-error .form-control:focus {
-    box-shadow: none;
+.form-control:focus {
+    .has-warning &,
+    .has-success &,
+    .has-error & {
+        box-shadow: none;
+    }
 }
 
 .btn:active {
     box-shadow: none;
 }
 
+
+// 因为 bootstrap 写死了该属性，所以这里需要覆盖
 .list-group-item {
     padding: 5px 10px;
 }
@@ -45,6 +46,7 @@ input {
     margin-top: 2px;
 }
 
+// 重设置标签样式
 .label {
     padding-left: 1em;
     padding-right: 1em;
@@ -56,12 +58,14 @@ input {
     font-weight: 300;
 }
 
+// 使 radio 和 checkbox 对齐
 input[type="radio"],
 input[type="checkbox"] {
     margin: 2px 0 0;
 }
 
 
-.pagination-sm > li > a, .pagination-sm > li > span {
+.pagination-sm > li > a,
+.pagination-sm > li > span {
     padding: 2px 8px;
 }

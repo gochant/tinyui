@@ -1,0 +1,163 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JS插件</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <link href="../src/assets/bootstrap-theme-tiny/bootstrap.css" rel="stylesheet" />
+    <link href="../src/index.css" rel="stylesheet" />
+    <link href="assets/bootswatch.min.css" rel="stylesheet" />
+    <link href="../bower_components/jquery.scrollbar/jquery.scrollbar.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+        <script src="../bower_components/html5shiv/dist/html5shiv.js"></script>
+        <script src="../bower_components/respond/dest/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        .navbar {
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="bs-docs-section clearfix">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="page-header">
+                        <h1>Form Layout</h1>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="page-header">
+                        <h2>Form Normal</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="bs-component">
+                        <form>
+                            <fieldset>
+                                <legend>Personal Information</legend>
+                                <div class='row'>
+                                    <div class='col-sm-4'>
+                                        <div class='form-group'>
+                                            <label for="user_title">Title</label>
+                                            <input class="form-control" id="user_title" name="user[title]" size="30" type="text" />
+                                        </div>
+                                    </div>
+                                    <div class='col-sm-4'>
+                                        <div class='form-group'>
+                                            <label for="user_firstname">First name</label>
+                                            <input class="form-control" id="user_firstname" name="user[firstname]" required="true" size="30" type="text" />
+                                        </div>
+                                    </div>
+                                    <div class='col-sm-4'>
+                                        <div class='form-group'>
+                                            <label for="user_lastname">Last name</label>
+                                            <input class="form-control" id="user_lastname" name="user[lastname]" required="true" size="30" type="text" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class='row'>
+                                    <div class='col-sm-12'>
+                                        <div class='form-group'>
+
+                                            <label for="user_email">Email</label>
+                                            <input class="form-control required email" id="user_email" name="user[email]" required="true" size="30" type="text" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="page-header">
+                        <h2>Form Horizontal Table</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="bs-component">
+                        <form>
+                            <table class="table table-bordered table-hover table-form-horizontal">
+                                <tbody>
+                                    <tr>
+                                        <td colspan="4">
+                                            <label class="control-label">Quarter</label>
+                                            <input type="text" class="form-control" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3">
+                                            <label class="control-label">Address</label>
+                                            <input type="text" class="form-control" />
+                                        </td>
+                                        <td>
+                                            <label class="control-label">Addr. №</label>
+                                            <input type="text" class="form-control" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label class="control-label">Block name/Number</label>
+                                            <input type="text" class="form-control" />
+                                        </td>
+                                        <td>
+                                            <label class="control-label">Entrance</label>
+                                            <input type="text" class="form-control" />
+                                        </td>
+                                        <td>
+                                            <label class="control-label">Floor</label>
+                                            <input type="text" class="form-control" />
+                                        </td>
+                                        <td>
+                                            <label class="control-label">Apartament</label>
+                                            <input type="text" class="form-control" />
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div id="source-modal" class="modal fade">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Source Code</h4>
+                </div>
+                <div class="modal-body">
+                    <pre></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer></footer>
+
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../bower_components/jquery.layout/dist/jquery.layout-latest.min.js"></script>
+    <script src="../bower_components/jquery.scrollbar/jquery.scrollbar.min.js"></script>
+
+</body>
+</html>
