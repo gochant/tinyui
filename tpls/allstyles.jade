@@ -19,19 +19,20 @@ block content
         .col-lg-12
           .page-header
             h1#buttons Buttons
-      .row
-        .col-lg-6
+      div.row
+        div.col-lg-6
+            p.bs-component
+              include components/buttons.html
+            p.bs-component
+              include components/buttons-disabled.html
+            p.bs-component
+              include components/buttons-group.html
+            p.bs-component
+              include components/buttons-size.html
+
+        div.col-lg-6
           p.bs-component
-            include components/buttons.html
-          p.bs-component
-            include components/buttons-disabled.html
-          p.bs-component
-            include components/buttons-group.html
-          p.bs-component
-            include components/buttons-size.html
-        .col-lg-6
-          p.bs-component
-            | <a href="#" class="btn btn-default btn-lg btn-block">Block level button</a>
+            include components/buttons-block.html
           p.bs-component
             include components/buttons-justified.html
           p.bs-component
@@ -39,4 +40,18 @@ block content
           p.bs-component
             include components/buttons-vertical.html
 
-
+    .bs-docs-section
+      .row
+        .col-lg-12
+          .page-header
+            h1#type Typography
+      .row
+        .col-lg-4
+          .bs-component
+            include components/typo-heading.html
+        .col-lg-4
+          .bs-component
+            include components/typo-para.html
+        .col-lg-4
+          .bs-component
+            include components/typo-emphasis.html
