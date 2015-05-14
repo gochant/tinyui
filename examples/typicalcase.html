@@ -138,6 +138,274 @@
                 </tbody>
             </table>
         </div>
+
+        <div class="panel panel-transparent">
+            <div class="panel-heading">
+                <h3 class="panel-title">Panel Transparent</h3>
+            </div>
+            <div class="panel-body">
+                Panel content
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading clearfix">
+                <h3 class="panel-title pull-left">Panel With Tab</h3>
+                <div class="panel-toolbar pull-right">
+                    <ul class="nav nav-tabs" id="myTab2">
+                        <li class="active">
+                            <a data-toggle="tab" href="#home2">Home</a>
+                        </li>
+
+                        <li>
+                            <a data-toggle="tab" href="#profile2">Profile</a>
+                        </li>
+
+                        <li>
+                            <a data-toggle="tab" href="#info2">Info</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="panel-body">
+                Panel content
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Panel With Table</h3>
+            </div>
+            <table class="table table-striped table-bordered table-hover">
+                <thead class="thin-border-bottom">
+                    <tr>
+                        <th>
+                            <i class="ace-icon fa fa-user"></i>
+                            User
+                        </th>
+
+                        <th>
+                            <i>@</i>
+                            Email
+                        </th>
+                        <th class="hidden-480">Status</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td class="">Alex</td>
+
+                        <td>
+                            <a href="#">alex@email.com</a>
+                        </td>
+
+                        <td class="hidden-480">
+                            <span class="label label-warning">Pending</span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="">Fred</td>
+
+                        <td>
+                            <a href="#">fred@email.com</a>
+                        </td>
+
+                        <td class="hidden-480">
+                            <span class="label label-success arrowed-in arrowed-in-right">Approved</span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="">Jack</td>
+
+                        <td>
+                            <a href="#">jack@email.com</a>
+                        </td>
+
+                        <td class="hidden-480">
+                            <span class="label label-warning">Pending</span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="">John</td>
+
+                        <td>
+                            <a href="#">john@email.com</a>
+                        </td>
+
+                        <td class="hidden-480">
+                            <span class="label label-inverse arrowed">Blocked</span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="">James</td>
+
+                        <td>
+                            <a href="#">james@email.com</a>
+                        </td>
+
+                        <td class="hidden-480">
+                            <span class="label label-info arrowed-in arrowed-in-right">Online</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+
+        <div class="panel panel-default">
+            <div class="panel-heading ">
+                <h3 class="panel-title">Panel Width Toolbar</h3>
+            </div>
+            <div class="panel-toolbar">
+                <div class="btn-toolbar">
+                    <div class="btn-group">
+                        <button class="btn btn-default">Test</button>
+                    </div>
+                    <div class="btn-group">
+                        <button class="btn btn-default">Test</button>
+                    </div>
+                    <div class="btn-group">
+                        <button class="btn btn-default">Test</button>
+                    </div>
+                    <div class="btn-group">
+                        <button class="btn btn-default">Test</button>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-body">
+                <div class="alert alert-info">
+                    Nunc aliquam enim ut arcu aliquet adipiscing. Fusce dignissim volutpat justo non consectetur. Nulla fringilla eleifend consectetur.
+                </div>
+            </div>
+            <div class="panel-footer">
+                <div class="btn-toolbar">
+                    <button class="btn btn-danger pull-left">
+                        <i class="tiny-icon fa fa-cancel"></i>
+                        <span class="bigger-110">I don't accept</span>
+                    </button>
+
+                    <button class="btn btn-success pull-right">
+                        <span class="bigger-110">I accept</span>
+                        <i class="tiny-icon fa fa-right-big"></i>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="panel panel-default">
+            <div class="panel-heading clearfix">
+                <h3 class="panel-title pull-left">
+                    Heading
+                    <small>sub heading</small>
+                </h3>
+                <div class="panel-toolbar pull-right">
+                    <form class="form-inline">
+                        <div class="form-group">
+                            <div class=" input-group" style="width:150px;">
+                                <input type="text" class="form-control" placeholder="输入字符搜索" value="" />
+                                <div class="input-group-btn">
+                                    <button class="btn btn-default"><i class="fa fa-search"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group btn-toolbar">
+                            <div class="btn-group">
+                                <a class="btn btn-default" data-child-code="@ViewBag.Code" data-action="previewSupLevel">
+                                    <i class="fa fa-arrow-left"></i>
+                                    返回上级
+                                </a>
+                            </div>
+
+                            <div class="btn-group">
+                                <button class="btn btn-default" data-action="selectSub">
+                                    选择地域
+                                    <i class="fa fa-chevron-circle-down"></i>
+                                </button>
+                            </div>
+
+                            <div class="btn-group">
+                                <button class="btn btn-default" data-action="create">
+                                    <i class="fa fa-plus"></i>
+                                    添加
+                                </button>
+                            </div>
+
+                            <div class="btn-group">
+                                <button class="btn btn-default" data-action="edit">
+                                    <i class="fa fa-pencil"></i>
+                                    编辑
+                                </button>
+                            </div>
+
+                            <div class="btn-group">
+                                <button class="btn btn-default" data-action="remove">
+                                    <i class="fa fa-trash"></i>
+                                    删除
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            <input type="checkbox" value="" id="" />
+                        </th>
+                        <th>
+                            编码
+                        </th>
+                        <th>
+                            名称
+                        </th>
+                        <th>
+                            级别
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <input type="checkbox" value="" id="" />
+                        </td>
+                        <td>
+                            51
+                        </td>
+                        <td>
+                            四川省
+                        </td>
+                        <td>
+                            省直辖市
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" value="" id="" />
+                        </td>
+                        <td>
+                            61
+                        </td>
+                        <td>
+                            陕西省
+                        </td>
+                        <td>
+                            省直辖市
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+
     </div>
     <script src="assets/jquery.min.js"></script>
     <script src="assets/bootstrap.min.js"></script>

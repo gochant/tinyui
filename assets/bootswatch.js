@@ -32,26 +32,17 @@
     });
 
     function cleanSource(html) {
-        html += '\n';
-        var lines = html.split(/\n/);
-
-        // lines.shift();
-        //lines.splice(-1, 1);
-
-        var indentSize = lines[0].length - lines[0].trim().length,
-            re = new RegExp(" {" + indentSize + "}");
-
-        lines = lines.map(function (line) {
-            if (line.match(re)) {
-                line = line.substring(indentSize);
-            }
-
-            return line;
+        var lines = $(html).toArray();
+        lines.splice(-1, 1);
+        var result = [];
+        $(lines).each(function (i, line) {
+            if (line.outerHTML)
+                result.push(line.outerHTML);
         });
 
-        lines = lines.join("\n");
+        result = result.join("\n");
 
-        return lines;
+        return result;
     }
 
 })();
