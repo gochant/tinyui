@@ -8,3 +8,5 @@ $('.scrollbar-macosx').scrollbar();
 //    spacing_open: 0,
 //    west__size: 191
 //});
+
+//$('.table-striped').fixedHeaderTable({ themeClass: 'table' });
