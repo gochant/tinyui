@@ -229,7 +229,8 @@
     <script src="../bower_components/jquery-validation/dist/jquery.validate.min.js"></script>
     <script src="../bower_components/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
     <script src="assets/jquery.validate.bootstrap-tooltip.js"></script>
-    <script src="../bower_components/smalot-bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="assets/bootstrap-datetimepicker.min.js"></script>
+    <!--<script src="../bower_components/smalot-bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>-->
     <script src="../bower_components/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js"></script>
     <script src="../bower_components/noty/js/noty/packaged/jquery.noty.packaged.js"></script>
     <script src="../bower_components/typeahead.js/dist/typeahead.jquery.js"></script>
@@ -244,10 +245,15 @@
         //});
 
         $('#date').datetimepicker({
+            format: 'yyyy-mm-dd',
+            startView: 3,
+            startDate: new Date('2015-01-01'),
+            endDate: new Date('2015-12-31'),
             language: 'zh-CN',
+            //endDate: new Date(date != undefined && date ? date + '-12-31' : new Date().getFullYear() + '-12-31'),
+            initialDate: new Date(),
+            minView: 2,
             autoclose: true
-            //,
-            //startDate: new Date('1999/01/01')
         });
 
         // noty

@@ -14,7 +14,8 @@
         "jstree-bootstrap-theme": "latest",
         "jquery.layout": "latest",
         "jquery-file-upload": "latest",
-        "typeahead.js": "latest"
+        "typeahead.js": "latest",
+        "font-awesome": "latest"
     },
     "devDependencies": {
         "requirejs-text": "latest",

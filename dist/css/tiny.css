@@ -442,7 +442,7 @@ input[type="checkbox"] {
   right: 3px;
 }
 .sidebar {
-  width: 190px;
+  /*width: @sidebar-width;*/
 }
 .sidebar .nav-list {
   border-bottom: 1px solid #dddddd;
@@ -1033,13 +1033,13 @@ input[type="checkbox"] {
 }
 /* �Զ�����ʽ */
 .panel .panel-heading.clearfix {
-  height: 37px;
-  line-height: 37px;
+  height: 40px;
+  line-height: 36px;
   padding: 0 5px;
 }
 .panel .panel-heading.clearfix .panel-title,
 .panel .panel-heading.clearfix .panel-toolbar {
-  line-height: 37px;
+  line-height: 40px;
 }
 .panel .panel-heading.clearfix .panel-title .form-group,
 .panel .panel-heading.clearfix .panel-toolbar .form-group {
@@ -1171,6 +1171,9 @@ body > .header {
 .mt5 {
   margin-top: 5px;
 }
+.mb10 {
+  margin-bottom: 10px;
+}
 /* 隐藏默认的验证标签 */
 .has-feedback .form-control-feedback.field-validation-valid {
   display: none;
@@ -1293,4 +1296,138 @@ body.desktop .page-content {
 .navbar-dark .navbar-text > li > a:focus,
 .navbar-dark .nav > li > a:focus {
   background-color: transparent;
+}
+.navbar-dark .nav .open > a {
+  background-color: transparent;
+}
+.paper-bills {
+  position: relative;
+  padding: 15px 45px;
+  border: 1px solid #cfcfcf;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+.paper-bills .metadata {
+  position: absolute;
+  top: 20px;
+  left: 45px;
+}
+.paper-bills .table-paper-wrapper {
+  border: 2px solid gray;
+}
+.paper-bills .table-paper-wrapper .table-bordered > thead > tr > th,
+.paper-bills .table-paper-wrapper .table-bordered > tbody > tr > th,
+.paper-bills .table-paper-wrapper .table-bordered > tfoot > tr > th,
+.paper-bills .table-paper-wrapper .table-bordered > thead > tr > td,
+.paper-bills .table-paper-wrapper .table-bordered > tbody > tr > td,
+.paper-bills .table-paper-wrapper .table-bordered > tfoot > tr > td {
+  border-color: gray;
+}
+.paper-bills .table-paper-wrapper .table-paper {
+  margin-bottom: 0;
+}
+.paper-bills .table-paper-wrapper .table-paper.table-bordered thead > tr > th {
+  border-bottom-width: 1px;
+}
+.paper-bills .table-paper-wrapper .table-paper tr > th {
+  text-align: center;
+  vertical-align: middle;
+}
+.paper-bills .table-paper-wrapper .table-paper > thead > tr > th {
+  padding: 0;
+}
+.paper-bills .table-paper-wrapper .table-paper > tbody > tr > td {
+  padding: 0;
+  height: 46px;
+  line-height: 46px;
+}
+.paper-bills .table-paper-wrapper .table-paper > tbody > tr > td .form-control {
+  height: 46px;
+  line-height: 46px;
+}
+.paper-bills .table-paper-wrapper .table-paper .currency-wrapper {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANsAAAAUBAMAAAD2E1USAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA9QTFRF6enpp9n17bm55ubmvJyc+JGLrgAAAAV0Uk5T/////wD7tg5TAAAAM0lEQVRIx2NwgQFnLCxHCmSdsIg5MCCYWFiOFMg6YZMdtW7UulHrRq0btW7UulHrhrp1AJ1hRXRH7cOCAAAAAElFTkSuQmCC");
+  background-repeat: repeat-y;
+  text-align: left;
+}
+.paper-bills .table-paper-wrapper .table-paper .currency-head {
+  padding: 0;
+  width: 222px;
+}
+.paper-bills .table-paper-wrapper .table-paper .currency-head .currency-wrapper {
+  line-height: 22px;
+  border-top: 1px solid #dadada;
+}
+.paper-bills .table-paper-wrapper .table-paper .currency-head .currency-wrapper span {
+  width: 20px;
+  float: left;
+  text-align: center;
+  font-weight: normal;
+}
+.paper-bills .table-paper-wrapper .table-paper .currency-data {
+  font-weight: bold;
+  font-size: 14px;
+  letter-spacing: 11px;
+  overflow: hidden;
+  position: relative;
+  right: -5px;
+  text-align: right;
+}
+.paper-bills .table-paper-wrapper .table-paper .btn {
+  line-height: 1;
+}
+.w3em {
+  width: 3em !important;
+}
+.w10em {
+  width: 10em !important;
+}
+.table.form-inline {
+  margin-bottom: 0;
+}
+.table.form-inline > tbody > tr > td {
+  border: 0;
+  padding: 0;
+}
+.scroll-wrapper {
+  height: 100%;
+}
+body.admin {
+  padding-top: 40px;
+  /*.main {
+        padding: 20px;
+    }
+
+    @media (min-width: 768px) {
+        .main {
+            padding-right: 40px;
+            padding-left: 40px;
+        }
+    }*/
+}
+body.admin .sidebar-content {
+  display: none;
+  overflow: hidden;
+}
+@media (min-width: 768px) {
+  body.admin .sidebar-content {
+    position: fixed;
+    top: 41px;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: block;
+    padding: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    /* Scrollable contents if viewport is shorter than content. */
+    background-color: #f5f5f5;
+    border-right: 1px solid #eee;
+  }
+}
+body.admin .nav-sidebar {
+  /*margin-right: -21px;
+        margin-left: -20px;*/
+  margin-top: 5px;
+  margin-bottom: 20px;
 }
