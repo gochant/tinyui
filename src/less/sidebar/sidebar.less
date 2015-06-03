@@ -1,10 +1,12 @@
 @icon: tiny-icon; //自定义图标类
 
 @nav-item-icon-size: 18px;
-@nav-item-height: 28px; // 导航项高度
+@nav-item-height: 32px; // 导航项高度
+@nav-item-line-height: @nav-item-height - 10;
 @nav-item-border: #E5E5E5;
 @nav-list-hover-indicator-color: #629cc9;
 @nav-list-active-indicator-color: #2b7dbc;
+@nav-line-color: #d7dce5;
 
 @sidebar-background: #f3f3f3;
 @sidebar-width: 190px;
@@ -26,7 +28,8 @@
     top: @nav-item-height / 2 - @font-size / 2;
 }
 
-[class^="scrollbar-"], [class*=" scrollbar-"] {
+[class^="scrollbar-"],
+[class*=" scrollbar-"] {
     .sidebar {
         .nav-list > li.active:after {
             right: 1px;
@@ -39,23 +42,19 @@
 }
 
 .sidebar {
-
     /*width: @sidebar-width;*/
-
     .nav-list {
-        border-bottom: 1px solid @nav-tabs-border-color;
         // 顶级菜单项
         > li {
-            border-color: @nav-tabs-border-color;
-            border-width: 1px 0 0;
-            border-style: solid;
+            border: solid @nav-tabs-border-color;
+            border-width: 0 0 1px;
             // 前面显示的指示符
             &:before {
                 display: none;
                 content: "";
                 position: absolute;
                 top: -1px;
-                height: @nav-item-height + 1;
+                height: @nav-item-height + 3;
                 left: 0;
                 z-index: 1;
                 width: 3px;
@@ -85,11 +84,32 @@
             &.hover.active > a:after {
                 display: block;
             }
+
+            > a {
+                font-size: 14px;
+                height: @nav-item-height;
+                line-height: @nav-item-line-height;
+
+                &:focus {
+                    background: @sidebar-background;
+                }
+                // 大图标
+                > .menu-icon {
+                    min-width: 20px;
+                    vertical-align: baseline;
+                    text-align: center;
+                    font-size: 16px;
+                }
+
+                > .menu-text {
+                    padding-left: 10px;
+                }
+            }
         }
         // 通用菜单项
         li {
             position: relative;
-            padding: 0;
+            padding: 0 0 1px 0;
 
             > a:hover,
             > a:focus {
@@ -130,7 +150,7 @@
             // 下三角
             .arrow {
                 position: absolute;
-                right: 4px;
+                right: 10px;
                 top: @nav-item-height / 2 - @nav-item-icon-size / 2;
                 font-size: @nav-item-icon-size;
                 z-index: 1027;
@@ -219,21 +239,6 @@
                 }
             }
         }
-        // 顶级菜单项
-        > li > a {
-            font-size: 13px;
-
-            &:focus {
-                background: @sidebar-background;
-            }
-            // 大图标
-            > .menu-icon {
-                min-width: 20px;
-                vertical-align: middle;
-                text-align: center;
-                font-size: 16px;
-            }
-        }
         // 通用子菜单
         > li .submenu {
             position: relative;
@@ -248,8 +253,8 @@
                 position: relative;
                 padding: @nav-link-padding;
                 padding-left: 37px;
-                border-top: 1px dotted @nav-item-border;
                 background: @submenu-item-background;
+                color: #464646;
 
                 &:hover {
                     background-color: @nav-link-hover-bg;
@@ -276,9 +281,7 @@
                 left: 18px;
                 top: 0;
                 bottom: 0;
-                border: 1px dotted;
-                border-width: 0 0 0 1px;
-                border-color: #9dbdd6;
+                border-left: 1px solid @nav-line-color;
             }
 
             li.open:not(.hover) > a > .menu-icon {
@@ -452,7 +455,6 @@
 
             > a {
                 position: relative;
-                line-height: @nav-item-height;
                 padding: 0;
 
                 > .menu-icon {
@@ -465,7 +467,6 @@
                     left: 100%;
                     z-index: 1025;
                     width: @sidebar-min-submenu-width;
-                    height: @nav-item-height;
                     line-height: normal;
                     padding: 5px 10px 5px 12px;
                     border: 1px solid;
@@ -493,6 +494,7 @@
             > a {
                 position: relative;
                 padding: 0;
+                height: auto;
 
                 > .menu-icon {
                     display: block;
@@ -504,6 +506,7 @@
 
                 > .menu-text {
                     display: block;
+                    padding-left: 0;
                     text-align: center;
                     line-height: 18px;
                 }

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -107,23 +107,24 @@
                                 <div class="btn-group">
                                     <button class="btn btn-default" data-action="create">
                                         <i class="fa fa-plus"></i>
-                                        添加
+                                        新增
                                     </button>
                                 </div>
 
                                 <div class="btn-group">
                                     <button class="btn btn-default" data-action="edit">
                                         <i class="fa fa-pencil"></i>
-                                        编辑
+                                        修改
                                     </button>
                                 </div>
 
                                 <div class="btn-group">
-                                    <button class="btn btn-default" data-action="remove">
+                                    <button class="btn btn-default btn-delete">
                                         <i class="fa fa-trash"></i>
                                         删除
                                     </button>
                                 </div>
+
                             </div>
                         </form>
                         <form action="#" method="post">
@@ -257,19 +258,52 @@
         });
 
         // noty
-        noty({
-            text: 'NOTY - a jquery notification library!',
-            layout: 'topCenter',
-            theme: 'relax',
-            animation: {
-                open: { height: 'toggle' }, // jQuery animate function property object
-                close: { height: 'toggle' }, // jQuery animate function property object
-                easing: 'swing', // easing
-                speed: 500 // opening & closing animation speed
-            }
-        });
+        //noty({
+        //    text: 'NOTY - a jquery notification library!',
+        //    layout: 'topCenter',
+        //    theme: 'relax',
+        //    animation: {
+        //        open: { height: 'toggle' }, // jQuery animate function property object
+        //        close: { height: 'toggle' }, // jQuery animate function property object
+        //        easing: 'swing', // easing
+        //        speed: 500 // opening & closing animation speed
+        //    }
+        //});
 
+        $('.btn-delete').on('click', function () {
+            noty({
+                text: '确认执行这个操作？',
+                layout: 'topCenter',
+                theme: 'relax',
+                type: 'warning',
+                modal: true,
+                animation: {
+                    open: 'fadeIn',
+                    close: 'fadeOut',
+                    easing: 'swing',
+                    speed: 100
+                },
+                buttons: [
+                    {
+                        addClass: 'btn btn-primary btn-sm', text: '确定', onClick: function ($noty) {
 
+                            // this = button element
+                            // $noty = $noty element
+
+                            $noty.close();
+
+                        }
+                    },
+                    {
+                        addClass: 'btn btn-danger btn-sm', text: '取消', onClick: function ($noty) {
+                            $noty.close();
+
+                        }
+                    }
+                ]
+            });
+            return false;
+        })
 
         var substringMatcher = function (strs) {
             return function findMatches(q, cb) {
@@ -304,14 +338,14 @@
           'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
         ];
 
-        $('.typeahead').typeahead({
-            hint: true,
-            highlight: true,
-            minLength: 1
-        }, {
-            name: 'states',
-            source: substringMatcher(states)
-        });
+        //$('.typeahead').typeahead({
+        //    hint: true,
+        //    highlight: true,
+        //    minLength: 1
+        //}, {
+        //    name: 'states',
+        //    source: substringMatcher(states)
+        //});
 
     </script>
 </body>
