@@ -115,6 +115,22 @@
             > a:focus {
                 text-decoration: none;
             }
+            // 下三角
+            .arrow {
+                position: absolute;
+                right: 10px;
+                top: @nav-item-height / 2 - @nav-item-icon-size / 2;
+                font-size: @nav-item-icon-size;
+                z-index: 1027;
+            }
+
+            .submenu {
+                // 子菜单下三角
+                .arrow {
+                    top: @submenu-height / 2 - @submenu-item-icon-size / 2;
+                    font-size: @submenu-item-icon-size;
+                }
+            }
             // 弹出层小三角
             > .arrow {
                 display: none;
@@ -146,19 +162,6 @@
                     border-width: 5px 5px 5px 0;
                     left: 2px;
                 }
-            }
-            // 下三角
-            .arrow {
-                position: absolute;
-                right: 10px;
-                top: @nav-item-height / 2 - @nav-item-icon-size / 2;
-                font-size: @nav-item-icon-size;
-                z-index: 1027;
-            }
-            // 子菜单下三角
-            .submenu .arrow {
-                top: @nav-item-height / 2 - @submenu-item-icon-size / 2;
-                font-size: @submenu-item-icon-size;
             }
 
             &.active > .submenu,
