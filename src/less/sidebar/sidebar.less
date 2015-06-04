@@ -157,7 +157,7 @@
             }
             // 子菜单下三角
             .submenu .arrow {
-                top: @nav-item-height / 2 - @submenu-item-icon-size / 2;
+                top: @submenu-height / 2 - @submenu-item-icon-size / 2;
                 font-size: @submenu-item-icon-size;
             }
 
@@ -298,9 +298,8 @@
                     z-index: 1;
                     left: 20px;
                     top: @nav-item-height / 2;
-                    border: 1px dotted;
+                    border: 1px solid @nav-line-color;
                     border-width: 1px 0 0;
-                    border-color: @nav-link-hover-bg;
                 }
 
                 > a > .menu-icon {
