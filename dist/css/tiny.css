@@ -507,6 +507,17 @@ input[type="checkbox"] {
 .sidebar .nav-list li > a:focus {
   text-decoration: none;
 }
+.sidebar .nav-list li .arrow {
+  position: absolute;
+  right: 10px;
+  top: 7px;
+  font-size: 18px;
+  z-index: 1027;
+}
+.sidebar .nav-list li .submenu .arrow {
+  top: 6px;
+  font-size: 16px;
+}
 .sidebar .nav-list li > .arrow {
   display: none;
 }
@@ -534,17 +545,6 @@ input[type="checkbox"] {
   border-right-color: #fff;
   border-width: 5px 5px 5px 0;
   left: 2px;
-}
-.sidebar .nav-list li .arrow {
-  position: absolute;
-  right: 10px;
-  top: 7px;
-  font-size: 18px;
-  z-index: 1027;
-}
-.sidebar .nav-list li .submenu .arrow {
-  top: 6px;
-  font-size: 16px;
 }
 .sidebar .nav-list li.active > .submenu,
 .sidebar .nav-list li.open > .submenu {

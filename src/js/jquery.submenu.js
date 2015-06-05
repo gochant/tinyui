@@ -1,4 +1,4 @@
-﻿; (function ($, window, document, undefined) {
+; (function ($, window, document, undefined) {
 
     "use strict";
 
@@ -94,5 +94,83 @@
 
         });
     };
+
+})(jQuery, window, document);
+
+; (function ($, window, document, undefined) {
+
+    "use strict";
+
+    // Box class IE bugfix
+    var pluginName = "boxBugfix";
+
+    // isIE('lte IE 9')
+    var isIE = function (condition) {
+        var b = document.createElement('b');
+        b.innerHTML = '<!--[if ' + condition + ']><i></i><![endif]-->';
+        return b.getElementsByTagName('i').length === 1;
+    }
+
+    var now = Date.now || function () {
+        return new Date().getTime();
+    };
+
+    // thx: https://github.com/jashkenas/underscore
+    var debounce = function (func, wait, immediate) {
+        var timeout, args, context, timestamp, result;
+
+        var later = function () {
+            var last = now() - timestamp;
+
+            if (last < wait && last >= 0) {
+                timeout = setTimeout(later, wait - last);
+            } else {
+                timeout = null;
+                if (!immediate) {
+                    result = func.apply(context, args);
+                    if (!timeout) context = args = null;
+                }
+            }
+        };
+
+        return function () {
+            context = this;
+            args = arguments;
+            timestamp = now();
+            var callNow = immediate && !timeout;
+            if (!timeout) timeout = setTimeout(later, wait);
+            if (callNow) {
+                result = func.apply(context, args);
+                context = args = null;
+            }
+
+            return result;
+        };
+    };
+
+    var relayout = function ($el) {
+        $el.length || ($el = $('body'));
+        $.each($el.find('.box-cell'), function (i, el) {
+            $(el).height(0);
+            setTimeout(function () {  // IE8 需等JS队列执行完 reflow 后才能再计算高度
+                $(el).height($(el).parent().height());
+            }, 0);
+        });
+    };
+
+    $.fn[pluginName] = function () { };
+
+    /*@cc_on $('body').addClass('oldie'); @*/
+
+    if ($('body').hasClass('oldie')) {
+        $.fn[pluginName] = function () {
+            relayout($(this));
+        };
+
+        $(window).resize(debounce(relayout, 300));
+    }
+    setTimeout(function () {
+        $('body')[pluginName]();
+    }, 0);
 
 })(jQuery, window, document);
