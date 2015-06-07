@@ -1,8 +1,52 @@
+// 面板 Panel
+//
+// 通常用于界面元素的分组显示
+//
+// Styleguide panel
 
-@breadcrumb-margin-left: 5px;
-@panel-heading-height: 40px;
-@panel-heading-line-height: 36px;
-@panel-heading-nav-top: 6px;
+// Bootstrap
+//
+// Bootstrap 的默认内容
+//
+// Markup: ../tpls/_build/panel/panel-base.html
+//
+// Styleguide panel.bootstrap
+
+
+// Extra
+//
+// 额外的扩展
+//
+// Markup: ../tpls/_build/panel/panel-tpl.hbs
+//
+// .panel-shadow - 带阴影
+// .panel-lg - 大面板
+//
+// Styleguide panel.extra
+
+// Toolbar
+//
+// 放置工具条
+//
+// Markup: ../tpls/_build/panel/panel-with-toolbar.html
+//
+// Styleguide panel.toolbar
+
+// Tab
+//
+// tab
+//
+// Markup: ../tpls/_build/panel/panel-tab.html
+//
+// Styleguide panel.tab
+
+// Table
+//
+// 
+//
+// Markup: ../tpls/_build/panel/panel-table.html
+//
+// Styleguide panel.table
 
 .panel {
 
@@ -10,7 +54,6 @@
 
         &.clearfix {
             height: @panel-heading-height;
-            line-height: @panel-heading-line-height;
             padding: 0 5px;
 
             .panel-title,
@@ -42,11 +85,24 @@
     }
 }
 
+.panel-shadow {
+    border: 1px solid #cfcfcf;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+
+.panel-lg {
+    .panel-heading,
+    .panel-footer {
+        padding: @panel-lg-heading-padding;
+    }
+}
+
 .panel-transparent {
     box-shadow: none;
 
     > .panel-heading {
-        border-bottom: 1px solid #DCE8F1;
+        border-bottom: 1px solid @panel-transparent-heading-border-color;
         padding-left: 3px;
     }
 }

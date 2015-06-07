@@ -1,0 +1,14 @@
+{
+    "source": "./less",
+    "destination": "../site/doc",
+    "template": "../doc-template",
+    "css": [ "../assets/tiny/css/tiny.css" ],
+    "js": [
+        "../assets/jquery/dist/jquery.min.js",
+        "../assets/tiny/js/bootstrap.js",
+        "../assets/tiny/js/jquery.submenu.js",
+        "../assets/demo.js"
+    ],
+    "title": "Tiny'",
+    "xdemo": 0
+}

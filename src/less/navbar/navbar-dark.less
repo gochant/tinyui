@@ -1,0 +1,36 @@
+// 扩展 navbar 样式，便于添加图片
+
+.navbar-dark {
+    background-color: #3f51b5;
+    border: 0;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.26);
+    margin-bottom: 0;
+
+    .navbar-brand {
+        color: #fff;
+
+        &:hover,
+        &:focus {
+            color: #fff;
+            background-color: transparent;
+        }
+    }
+
+    .navbar-nav,
+    .navbar-text,
+    .nav {
+        color: #fff;
+
+        > li > a {
+            color: #fff;
+
+            &:hover, &:focus {
+                background-color: transparent;
+            }
+        }
+    }
+
+    .nav .open > a {
+        background-color: transparent;
+    }
+}

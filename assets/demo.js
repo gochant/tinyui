@@ -1,5 +1,5 @@
 // ²à±ßÀ¸
-$('#sidebar-normal').submenu();
-$('#sidebar-mini').submenu().find('li').addClass('hover');
-$('#sidebar-compact').submenu().find('li').addClass('hover');
+$('.sidebar').submenu();
+$('.sidebar-min').find('li').addClass('hover');
+$('.sidebar-compact').find('li').addClass('hover');
 

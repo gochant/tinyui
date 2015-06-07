@@ -44,55 +44,6 @@ body > .header {
 }
 
 
-/* 一些帮助工具类 */
-
-.p15 {
-    padding: 15px;
-}
-
-.row-container,
-.p15-lr {
-    padding: 0 15px;
-}
-
-.p5 {
-    padding: 5px;
-}
-
-.p10 {
-    padding: 10px;
-}
-
-.w150 {
-    width: 150px;
-}
-
-.tc {
-    text-align: center;
-}
-
-.mt5 {
-    margin-top: 5px;
-}
-
-.mb10 {
-    margin-bottom: 10px;
-}
-
-.full {
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-}
-
-.full-v {
-    height: 100%;
-    overflow: auto;
-}
-
-.border-r {
-    border-right: 1px solid #eee;
-}
 
 
 
@@ -171,7 +122,8 @@ body.desktop {
     float: none !important;
 }
 
-.label-transparent, .badge-transparent {
+.label-transparent,
+.badge-transparent {
     background-color: transparent;
 }
 
@@ -215,138 +167,9 @@ body.desktop {
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
 }
 
-// 扩展 navbar 样式，便于添加图片
 
-.navbar-dark {
-    background-color: #3f51b5;
-    border: 0;
-    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.26);
-    margin-bottom: 0;
 
-    .navbar-brand {
-        color: #fff;
 
-        &:hover,
-        &:focus {
-            color: #fff;
-            background-color: transparent;
-        }
-    }
-
-    .navbar-nav,
-    .navbar-text,
-    .nav {
-        color: #fff;
-
-        > li > a {
-            color: #fff;
-
-            &:hover, &:focus {
-                background-color: transparent;
-            }
-        }
-    }
-
-    .nav .open > a {
-        background-color: transparent;
-    }
-}
-
-@table-data-height: 46px;
-
-.paper-bills {
-    position: relative;
-    padding: 15px 45px;
-    border: 1px solid #cfcfcf;
-    background: #fff;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
-
-    .metadata {
-        position: absolute;
-        top: 20px;
-        left: 45px;
-    }
-
-    .table-paper-wrapper {
-        border: 2px solid gray;
-
-        .table-bordered > thead > tr > th,
-        .table-bordered > tbody > tr > th,
-        .table-bordered > tfoot > tr > th,
-        .table-bordered > thead > tr > td,
-        .table-bordered > tbody > tr > td,
-        .table-bordered > tfoot > tr > td {
-            border-color: gray;
-        }
-
-        .table-paper {
-            margin-bottom: 0;
-
-            &.table-bordered {
-                thead > tr > th {
-                    border-bottom-width: 1px;
-                }
-            }
-
-            tr > th {
-                text-align: center;
-                vertical-align: middle;
-            }
-
-            > thead > tr > th {
-                padding: 0;
-            }
-
-            > tbody > tr > td {
-                padding: 0;
-                height: @table-data-height;
-                line-height: @table-data-height;
-
-                .form-control {
-                    height: @table-data-height;
-                    line-height: @table-data-height;
-                }
-            }
-
-            .currency-wrapper {
-                background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANsAAAAUBAMAAAD2E1USAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA9QTFRF6enpp9n17bm55ubmvJyc+JGLrgAAAAV0Uk5T/////wD7tg5TAAAAM0lEQVRIx2NwgQFnLCxHCmSdsIg5MCCYWFiOFMg6YZMdtW7UulHrRq0btW7UulHrhrp1AJ1hRXRH7cOCAAAAAElFTkSuQmCC");
-                background-repeat: repeat-y;
-                text-align: left;
-            }
-
-            .currency-head {
-                padding: 0;
-                width: 222px;
-
-                .currency-wrapper {
-                    line-height: 22px;
-                    border-top: 1px solid #dadada;
-
-                    span {
-                        width: 20px;
-                        float: left;
-                        text-align: center;
-                        font-weight: normal;
-                    }
-                }
-            }
-
-            .currency-data {
-                font-weight: bold;
-                font-size: 14px;
-                letter-spacing: 11px;
-                overflow: hidden;
-                position: relative;
-                right: -5px;
-                text-align: right;
-            }
-
-            .btn {
-                line-height: 1;
-            }
-        }
-    }
-}
 
 // 用于文本输入框宽度
 .w3em {
@@ -366,96 +189,15 @@ body.desktop {
     }
 }
 
-// admin layout
 
 .scroll-wrapper {
     height: 100%;
 }
 
-.box {
-    display: table;
-    width: 100%;
-    height: 100%;
 
-    .box-row {
-        display: table-row;
-        height: 100%;
 
-        .box-cell {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-        }
 
-        .box-inner {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-        }
-    }
-}
 
-body.admin {
-    padding-top: @navbar-height;
-
-    .sidebar-content {
-        display: none;
-        overflow: hidden;
-    }
-
-    @media (min-width: 768px) {
-        .sidebar-content {
-            position: fixed;
-            top: @navbar-height + 1;
-            bottom: 0;
-            left: 0;
-            z-index: 999;
-            display: block;
-            padding: 0;
-            overflow-x: hidden;
-            overflow-y: auto;
-            background-color: #f5f5f5;
-            border-right: 1px solid #ccc;
-        }
-    }
-
-    @media (max-width: 767px) {
-        .main-fixed {
-            width: 100%;
-        }
-    }
-
-    .nav-sidebar {
-        /*margin-right: -21px;
-        margin-left: -20px;*/
-        margin-top: 1px;
-        margin-bottom: 20px;
-    }
-
-    .main {
-        padding: 0;
-        padding-left: 2px;
-    }
-
-    .main-fixed {
-        position: fixed;
-        top: @navbar-height + 1;
-        bottom: 0;
-    }
-    /*.main {
-        padding: 20px;
-    }
-
-    @media (min-width: 768px) {
-        .main {
-            padding-right: 40px;
-            padding-left: 40px;
-        }
-    }*/
-}
 
 .fixed-table-header {
     padding-right: 17px;

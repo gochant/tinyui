@@ -1,7 +1,0 @@
-{
-    "source": ".",
-    "destination": "./styleguide",
-    "template": "./doc-template",
-    "css": [ "../icons/css/fonttiny.css", "../index.css" ],
-    "xdemo": 0
-}

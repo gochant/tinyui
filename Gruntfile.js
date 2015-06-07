@@ -26,14 +26,79 @@ module.exports = function (grunt) {
                   { expand: true, src: ['src/js/*'], dest: 'dist/js/', filter: 'isFile', flatten: true }
                 ]
             },
+            assets: {
+                files: [{
+                    expand: true,
+                    cwd: 'bower_components/',
+                    src: [
+                        'assets/*',
+                        'dist/*',
+                        'font-awesome/**/*',
+                        'jquery.scrollbar/**/*',
+                        'html5shiv/**/*',
+                        'respond/**/*',
+                        'jquery/**/*',
+                        'jquery.scrollbar/**/*',
+                        'jquery.layout/**/*',
+                        'jquery.fixedheadertable/**/*'
+                    ],
+                    dest: 'site/assets'
+                }, {
+                    expand: true,
+                    cwd: 'dist/',
+                    src: ['**/*'],
+                    dest: 'site/assets/tiny'
+                }, {
+                    expand: true,
+                    cwd: 'assets/',
+                    src: ['**/*'],
+                    dest: 'site/assets'
+                }, {
+                    src: 'assets/index.html',
+                    dest: 'site/index.html'
+                }]
+            }
+        },
+        clean: {
+            include: ["src/tpls/_build"]
+        },
+        includes: {
+            build: {
+                cwd: 'src/tpls/_includes',
+                src: ['**/*.*'],
+                dest: 'src/tpls/_build'
+            }
+        },
+        kss: {
+            options: {
+                config: 'src/kss-config.json',
+            },
+            dist: {}
+        },
+        jade: {
+            compile: {
+                files: [{
+                    expand: true,
+                    cwd: "src/tpls/_jade",
+                    src: "*.jade",
+                    dest: "site/examples",
+                    ext: ".html"
+                }]
+            }
         }
     });
 
     // These plugins provide necessary tasks.
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-includes');
+    grunt.loadNpmTasks('grunt-kss');
+    grunt.loadNpmTasks('grunt-contrib-clean');
+    grunt.loadNpmTasks('grunt-contrib-jade');
 
     // Default task.
-    grunt.registerTask('default', ['less', 'copy']);
+    grunt.registerTask('release', ['less', 'copy']);
+    grunt.registerTask('site', ['release', 'includes', 'copy:assets', 'jade', 'kss', 'clean:include']);
+    grunt.registerTask('default', ['site']);
 
 };

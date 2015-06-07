@@ -1,0 +1,9 @@
+// baseon: http://getbootstrap.com/examples/dashboard/
+
+extends _layouts/extend-layout-explain
+
+block body
+  body.admin
+    include ../_build/cases/layout-admin.html
+    include _partials/scripts
+    script(src="../assets/layout-admin.js")

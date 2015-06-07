@@ -9,7 +9,6 @@
 // Styleguide tab
 
 .enable_tabs() when(@enable-tabs = true) {
-
     // 样式
     //
     // 提供简洁和丰富两种样式风格的选项卡
@@ -20,7 +19,6 @@
     // .padding-14 - 选项卡的左（上）侧偏移量，取决于 `@extend-level` 的设置
     //
     // Styleguide tab.style
-
     .nav-tabs {
         margin-bottom: 0;
         margin-left: 0;
@@ -90,9 +88,6 @@
             display: inline-block;
             text-align: center;
         }
-    }
-
-    .nav-tabs {
 
         &.tab-styled {
             > li {
@@ -170,7 +165,6 @@
 
         .navtab-paddingX(@extend_level);
     }
-
     // 位置
     //
     // 提供 top（默认）、bottom、left、right 四种位置
@@ -183,7 +177,6 @@
     // .tabs-right - 右侧
     //
     // Styleguide tab.position
-
     .enable_tab_positions() when(@enable-tab-positions = true) {
 
         .nav-tabs {
@@ -258,7 +251,6 @@
     }
 
     .enable_tab_positions();
-
     // 其他配置
     //
     // 包括自定义选项卡间的间隙，选项卡的大小、选项卡的背景等
@@ -271,7 +263,6 @@
     // .tab-space-4.tab-styled - 选项卡间距 `tab-space-*`，支持从 1 ~ 4 像素
     //
     // Styleguide tab.other
-
     .enable_tab_options() when (@enable-tab-options = true) {
         /* bigger tab buttons */
         .nav-tabs > li:not(.active):not(.open) > a:not(:hover) > .@{icon}:first-child.disabled {
@@ -306,7 +297,6 @@
             margin-right: 4px;
         }
         //colored tabs
-
         .nav-tabs[class*="tab-color-"] > li > a {
             &, &:focus, &:hover {
                 color: #FFF;
