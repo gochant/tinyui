@@ -1,7 +1,7 @@
 {
     "source": "./less",
     "destination": "../site/doc",
-    "template": "../doc-template",
+    "template": "../bower_components/kss-node-template-tiny",
     "css": [ "../assets/tiny/css/tiny.css" ],
     "js": [
         "../assets/jquery/dist/jquery.min.js",

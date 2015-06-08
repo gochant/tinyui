@@ -12,27 +12,42 @@ module.exports = function (grunt) {
                     }
                 },
                 files: {
-                    "dist/css/tiny.css": "src/index.less"
+                    "dist/css/tiny.css": "src/less/tiny.less"
                 }
             }
         },
         copy: {
             main: {
-                files: [
-                  { expand: true, src: ['bower_components/smalot-bootstrap-datetimepicker/css/bootstrap-datetimepicker.css'], dest: 'dist/css/', flatten: true },
-                  { expand: true, src: ['src/assets/bootstrap-theme-tiny/bootstrap.css'], dest: 'dist/css/', flatten: true },
-                  { expand: true, src: ['src/assets/bootstrap-theme-tiny/bootstrap.js'], dest: 'dist/js/', flatten: true },
-                  { expand: true, src: ['src/fonts/*'], dest: 'dist/fonts/', flatten: true },
-                  { expand: true, src: ['src/js/*'], dest: 'dist/js/', filter: 'isFile', flatten: true }
-                ]
+                files: [{
+                    expand: true,
+                    src: ['bower_components/smalot-bootstrap-datetimepicker/css/bootstrap-datetimepicker.css'],
+                    dest: 'dist/css/',
+                    flatten: true
+                }, {
+                    expand: true,
+                    src: ['src/assets/bootstrap-theme-tiny/bootstrap.css'],
+                    dest: 'dist/css/',
+                    flatten: true
+                }, {
+                    expand: true,
+                    src: ['src/assets/bootstrap-theme-tiny/bootstrap.js'],
+                    dest: 'dist/js/', flatten: true
+                }, {
+                    expand: true,
+                    src: ['src/fonts/*'],
+                    dest: 'dist/fonts/', flatten: true
+                }, {
+                    expand: true,
+                    src: ['src/js/*'],
+                    dest: 'dist/js/',
+                    filter: 'isFile', flatten: true
+                }]
             },
             assets: {
                 files: [{
                     expand: true,
                     cwd: 'bower_components/',
                     src: [
-                        'assets/*',
-                        'dist/*',
                         'font-awesome/**/*',
                         'jquery.scrollbar/**/*',
                         'html5shiv/**/*',
@@ -50,11 +65,11 @@ module.exports = function (grunt) {
                     dest: 'site/assets/tiny'
                 }, {
                     expand: true,
-                    cwd: 'assets/',
-                    src: ['**/*'],
-                    dest: 'site/assets'
+                    cwd: 'src/assets/',
+                    src: ['demo/**/*'],
+                    dest: 'site/assets/'
                 }, {
-                    src: 'assets/index.html',
+                    src: 'src/assets/demo/index.html',
                     dest: 'site/index.html'
                 }]
             }

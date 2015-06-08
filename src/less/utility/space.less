@@ -11,11 +11,6 @@
         margin: 12px 0;
     }
 
-    /*[class*="vspace-"] {
-        display: none;
-    }*/
-
-
     .spaceX (@index) when (@index > 0) {
         .space-@{index} {
             .space();
@@ -32,31 +27,6 @@
     }
 
     .spaceX(@extend_level);
-
-
-    /*@media only screen and (max-width: @screen-xs) {
-        [class*="vspace-"][class*="-xs"] {
-            display: block;
-        }
-    }
-
-    @media only screen and (max-width: @screen-xs-max) {
-        [class*="vspace-"][class*="-sm"] {
-            display: block;
-        }
-    }
-
-    @media only screen and (max-width: @screen-sm-max) {
-        [class*="vspace-"][class*="-md"] {
-            display: block;
-        }
-    }
-
-    @media only screen and (max-width: @screen-md-max) {
-        [class*="vspace-"][class*="-lg"] {
-            display: block;
-        }
-    }*/
 }
 
 .enable_utility_space();
