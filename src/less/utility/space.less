@@ -7,18 +7,15 @@
     // 默认的 space
     .space {
         .space();
+        display: inline-block;
         margin: 12px 0;
     }
-
-    [class*="vspace-"] {
-        display: none;
-    }
-
 
     .spaceX (@index) when (@index > 0) {
         .space-@{index} {
             .space();
-            margin: unit(@index, px) 0 unit(@index - 1, px);
+            width: 1px;
+            margin: 0 unit(@index, px) 0 unit(@index - 1, px);
         }
 
         [class*="vspace-@{index}"] {
@@ -30,34 +27,6 @@
     }
 
     .spaceX(@extend_level);
-    //produce spaces
-    .space-0, [class*="vspace-0"] {
-        .space();
-        margin: 0;
-    }
-
-    @media only screen and (max-width: @screen-tiny-max) {
-        [class*="vspace-"][class*="-xs"] {
-            display: block;
-        }
-    }
-
-    @media only screen and (max-width: @screen-xs-max) {
-        [class*="vspace-"][class*="-sm"] {
-            display: block;
-        }
-    }
-
-    @media only screen and (max-width: @screen-sm-max) {
-        [class*="vspace-"][class*="-md"] {
-            display: block;
-        }
-    }
-
-    @media only screen and (max-width: @screen-md-max) {
-        [class*="vspace-"][class*="-lg"] {
-            display: block;
-        }
-    }
 }
+
 .enable_utility_space();

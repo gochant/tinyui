@@ -1,0 +1,88 @@
+//--- bootstrap 补丁
+
+// 表格标题居中
+.table {
+    > thead {
+        > tr {
+            > th {
+                vertical-align: middle;
+            }
+        }
+    }
+}
+
+
+// 清除所有表单元素阴影
+input.form-control,
+div.form-control,
+.form-control,
+input {
+    box-shadow: none;
+
+    &:focus {
+        box-shadow: none;
+    }
+}
+
+.form-control:focus {
+    .has-warning &,
+    .has-success &,
+    .has-error & {
+        box-shadow: none;
+    }
+}
+
+.btn:active {
+    box-shadow: none;
+}
+
+
+// 因为 bootstrap 写死了该属性，所以这里需要覆盖
+.list-group-item {
+    padding: 5px 10px;
+}
+
+.modal-header .close {
+    margin-top: 2px;
+}
+
+// 重设置标签样式
+.label {
+    padding-left: 1em;
+    padding-right: 1em;
+    border-radius: 0;
+    font-weight: 300;
+}
+
+.badge {
+    font-weight: 300;
+}
+
+// 使 radio 和 checkbox 对齐
+input[type="radio"],
+input[type="checkbox"] {
+    margin: 2px 0 0;
+}
+
+
+.pagination-sm > li > a,
+.pagination-sm > li > span {
+    padding: 2px 8px;
+}
+
+
+// --------
+// 验证相关样式
+/* 隐藏默认的验证标签 */
+.has-feedback .form-control-feedback.field-validation-valid {
+    display: none;
+}
+
+.field-validation-error {
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+.has-feedback .form-control {
+    padding-right: 25px;
+}

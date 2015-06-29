@@ -1,0 +1,145 @@
+extends _layouts/extend-layout
+
+block title
+  title Tiny: All Style
+
+block styles
+  link(href="../assets/demo/bootswatch.css", rel="stylesheet")
+
+// 由于 jade 不支持 include 变量，所以要写全路径 _build
+
+block content
+  .container
+
+    // Navbar
+    .bs-docs-section
+      +header('navbar', 'Navbar')
+      +rowComponent()
+        include ../_build/navbar/navbar-default.html
+      +rowComponent()
+        include ../_build/navbar/navbar-inverse.html
+
+    // Buttons
+    .bs-docs-section
+      +header('buttons', 'Buttons')
+      .row
+        +col(6)
+          +bscomponent()
+            include ../_build/buttons/buttons.html
+          +bscomponent()
+            include ../_build/buttons/buttons-disabled.html
+          +bscomponent()
+            include ../_build/buttons/buttons-group.html
+          +bscomponent()
+            include ../_build/buttons/buttons-size.html
+        +col(6)
+          +bscomponent()
+            include ../_build/buttons/buttons-block.html
+          +bscomponent()
+            include ../_build/buttons/buttons-justified.html
+          +bscomponent()
+            include ../_build/buttons/buttons-toolbar.html
+          +bscomponent()
+            include ../_build/buttons/buttons-vertical.html
+
+    // Typography
+    .bs-docs-section
+      +header('typo', 'Typography')
+      .row
+        +colComponent(4)
+          include ../_build/typography/typo-heading.html
+        +colComponent(4)
+          include ../_build/typography/typo-para.html
+        +colComponent(4)
+          include ../_build/typography/typo-emphasis.html
+      +subheader('Blockquotes')
+      .row
+        +colComponent(6)
+          include ../_build/typography/blockquote.html
+        +colComponent(6)
+          include ../_build/typography/blockquote-alt.html
+
+    // Tables
+    .bs-docs-section
+      +header('tables', 'Tables')
+      +rowComponent()
+        include ../_build/table/table.html
+
+    // Forms
+    .bs-docs-section
+      +header('forms', 'Forms')
+      .row
+        +colComponent(6)
+          include ../_build/form/form-horizontal.html
+        .col-lg-4.col-lg-offset-1
+          +bscomponent()
+            include ../_build/form/form-input.html
+
+    // Navs
+    .bs-docs-section
+      +header('nav', 'Navs')
+      .row
+        .col-lg-4
+          h2#nav-tabs Tabs
+          +bscomponent()
+            include ../_build/nav/nav-tabs.html
+        .col-lg-4
+          h2#nav-pills Pills
+          +bscomponent()
+            include ../_build/nav/nav-pills.html
+            br
+            include ../_build/nav/nav-pills-stacked.html
+        .col-lg-4
+          h2#nav-breadcrumbs Breadcrumbs
+          +bscomponent()
+            include ../_build/nav/nav-breadcrumbs.html
+      .row
+        .col-lg-4
+          h2#pagination Pagination
+          +bscomponent()
+            include ../_build/nav/pagination.html
+        .col-lg-4
+          h2#pager Pager
+          +bscomponent()
+            include ../_build/nav/pager.html
+
+     // Indicators
+    .bs-docs-section
+      +header('indicators', 'Indicators')
+      +subheader('Alerts')
+        include ../_build/indicators/alerts.html
+      .row
+        .col-lg-4
+          include ../_build/indicators/alert-info.html
+        .col-lg-4
+          include ../_build/indicators/alert-success.html
+        .col-lg-4
+          include ../_build/indicators/alert-danger.html
+      .row
+        .col-lg-6
+          h2#Labels
+          include ../_build/indicators/label.html
+        .col-lg-6
+          h2#Badges
+          include ../_build/indicators/badges.html
+
+    // Progress
+    .bs-docs-section
+      +header('progress', 'Progress bars')
+      include ../_build/progress/progress.html
+
+    // Containers
+    .bs-docs-section
+      +header('container', 'Containers')
+      include ../_build/containers/jumbotron.html
+      +subheader('List groups')
+      include ../_build/list/list-group.html
+      +subheader('Panels')
+      include ../_build/panel/panel-base.html
+      +subheader('Wells')
+      include ../_build/containers/well.html
+
+    .bs-docs-section
+      +header('dialogs', 'Dialogs')
+      +subheader('Modals')
+      include ../_build/containers/dialogs.html

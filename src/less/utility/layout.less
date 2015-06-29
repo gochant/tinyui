@@ -1,71 +1,37 @@
-.enable_utility_layout() when(@enable-utility-layout = true) {
-    .inline {
-        display: inline-block !important;
+
+// 桌面布局，全屏
+.desktop {
+    zoom: 1;
+    overflow: hidden;
+    width: auto;
+    height: auto;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    .main-container,
+    .main-content,
+    .page-content,
+    .full {
+        height: 100%;
     }
 
-    .block {
-        display: block !important;
-    }
-
-    .center, .align-center {
-        text-align: center !important;
-    }
-
-    .align-left {
-        text-align: left !important;
-    }
-
-    .align-right {
-        text-align: right !important;
-    }
-
-    .middle {
-        vertical-align: middle;
-    }
-
-    .align-middle {
-        vertical-align: middle !important;
-    }
-
-    .align-top {
-        vertical-align: top !important;
-    }
-
-    .align-bottom {
-        vertical-align: bottom !important;
-    }
-
-    .position-relative, .pos-rel {
-        position: relative;
-    }
-
-    .position-absolute, .pos-abs {
-        position: absolute;
-    }
-
-    .no-float {
-        float: none !important;
-    }
-
-    .line-height-normal {
-        line-height: normal !important;
-    }
-
-    .line-height-0 {
-        line-height: 0 !important;
-    }
-
-    .line-height-1 {
-        line-height: 1 !important;
-    }
-
-    .line-height-125 {
-        line-height: 1.25 !important;
-    }
-
-    .line-height-150 {
-        line-height: 1.5 !important;
+    .page-content {
+        padding: 0;
     }
 }
 
-.enable_utility_layout();
+// 简单两栏布局
+.wrapper {
+    .side {
+        float: left;
+        width: 180px;
+    }
+
+    .content {
+        margin-left: 180px;
+    }
+}

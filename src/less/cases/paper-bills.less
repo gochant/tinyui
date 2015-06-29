@@ -1,0 +1,96 @@
+@table-data-height: 46px;  // 文本框高度
+
+
+.paper-bills {
+    position: relative;
+    padding: 15px 45px;
+    background: #fff;
+    border: 1px solid #cfcfcf;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+
+    .metadata {
+        position: absolute;
+        top: 20px;
+        left: 45px;
+    }
+
+    .table-paper-wrapper {
+        border: 2px solid gray;
+
+        .table-bordered > thead > tr > th,
+        .table-bordered > tbody > tr > th,
+        .table-bordered > tfoot > tr > th,
+        .table-bordered > thead > tr > td,
+        .table-bordered > tbody > tr > td,
+        .table-bordered > tfoot > tr > td {
+            border-color: gray;
+        }
+
+        .table-paper {
+            margin-bottom: 0;
+
+            &.table-bordered {
+                thead > tr > th {
+                    border-bottom-width: 1px;
+                }
+            }
+
+            tr > th {
+                text-align: center;
+                vertical-align: middle;
+            }
+
+            > thead > tr > th {
+                padding: 0;
+            }
+
+            > tbody > tr > td {
+                padding: 0;
+                height: @table-data-height;
+                line-height: @table-data-height;
+
+                .form-control {
+                    height: @table-data-height;
+                    line-height: normal;
+                }
+            }
+
+            .currency-wrapper {
+                background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANsAAAAUBAMAAAD2E1USAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA9QTFRF6enpp9n17bm55ubmvJyc+JGLrgAAAAV0Uk5T/////wD7tg5TAAAAM0lEQVRIx2NwgQFnLCxHCmSdsIg5MCCYWFiOFMg6YZMdtW7UulHrRq0btW7UulHrhrp1AJ1hRXRH7cOCAAAAAElFTkSuQmCC");
+                background-repeat: repeat-y;
+                text-align: left;
+            }
+
+            .currency-head {
+                padding: 0;
+                width: 222px;
+
+                .currency-wrapper {
+                    line-height: 22px;
+                    border-top: 1px solid #dadada;
+
+                    span {
+                        width: 20px;
+                        float: left;
+                        text-align: center;
+                        font-weight: normal;
+                    }
+                }
+            }
+
+            .currency-data {
+                font-weight: bold;
+                font-size: 14px;
+                letter-spacing: 11px;
+                overflow: hidden;
+                position: relative;
+                right: -5px;
+                text-align: right;
+            }
+
+            .btn {
+                line-height: 1;
+            }
+        }
+    }
+}

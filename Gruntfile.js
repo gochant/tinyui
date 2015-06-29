@@ -4,43 +4,6 @@ module.exports = function (grunt) {
     // Project configuration.
     grunt.initConfig({
         // Task configuration.
-        jshint: {
-            options: {
-                curly: true,
-                eqeqeq: true,
-                immed: true,
-                latedef: true,
-                newcap: true,
-                noarg: true,
-                sub: true,
-                undef: true,
-                unused: true,
-                boss: true,
-                eqnull: true,
-                globals: {
-                    jQuery: true
-                }
-            },
-            gruntfile: {
-                src: 'Gruntfile.js'
-            },
-            lib_test: {
-                src: ['lib/**/*.js', 'test/**/*.js']
-            }
-        },
-        nodeunit: {
-            files: ['test/**/*_test.js']
-        },
-        watch: {
-            gruntfile: {
-                files: '<%= jshint.gruntfile.src %>',
-                tasks: ['jshint:gruntfile']
-            },
-            lib_test: {
-                files: '<%= jshint.lib_test.src %>',
-                tasks: ['jshint:lib_test', 'nodeunit']
-            }
-        },
         less: {
             production: {
                 options: {
@@ -49,31 +12,108 @@ module.exports = function (grunt) {
                     }
                 },
                 files: {
-                    "dist/css/tiny.css": "src/index.less"
+                    "dist/css/tiny.css": "src/less/tiny.less"
                 }
             }
         },
         copy: {
             main: {
-                files: [
-                  { expand: true, src: ['bower_components/smalot-bootstrap-datetimepicker/css/bootstrap-datetimepicker.css'], dest: 'dist/css/', flatten: true },
-                  { expand: true, src: ['src/assets/bootstrap-theme-tiny/bootstrap.css'], dest: 'dist/css/', flatten: true },
-                  { expand: true, src: ['src/assets/bootstrap-theme-tiny/bootstrap.js'], dest: 'dist/js/', flatten: true },
-                  { expand: true, src: ['src/fonts/*'], dest: 'dist/fonts/', flatten: true },
-                  { expand: true, src: ['src/js/*'], dest: 'dist/js/', filter: 'isFile', flatten: true }
-                ]
+                files: [{
+                    expand: true,
+                    src: ['bower_components/smalot-bootstrap-datetimepicker/css/bootstrap-datetimepicker.css'],
+                    dest: 'dist/css/',
+                    flatten: true
+                }, {
+                    expand: true,
+                    src: ['src/assets/bootstrap-theme-tiny/bootstrap.css'],
+                    dest: 'dist/css/',
+                    flatten: true
+                }, {
+                    expand: true,
+                    src: ['src/assets/bootstrap-theme-tiny/bootstrap.js'],
+                    dest: 'dist/js/', flatten: true
+                }, {
+                    expand: true,
+                    src: ['src/fonts/*'],
+                    dest: 'dist/fonts/', flatten: true
+                }, {
+                    expand: true,
+                    src: ['src/js/*'],
+                    dest: 'dist/js/',
+                    filter: 'isFile', flatten: true
+                }]
             },
+            assets: {
+                files: [{
+                    expand: true,
+                    cwd: 'bower_components/',
+                    src: [
+                        'font-awesome/**/*',
+                        'jquery.scrollbar/**/*',
+                        'html5shiv/**/*',
+                        'respond/**/*',
+                        'jquery/**/*',
+                        'jquery.scrollbar/**/*',
+                        'jquery.layout/**/*',
+                        'jquery.fixedheadertable/**/*'
+                    ],
+                    dest: 'site/assets'
+                }, {
+                    expand: true,
+                    cwd: 'dist/',
+                    src: ['**/*'],
+                    dest: 'site/assets/tiny'
+                }, {
+                    expand: true,
+                    cwd: 'src/assets/',
+                    src: ['demo/**/*'],
+                    dest: 'site/assets/'
+                }, {
+                    src: 'src/assets/demo/index.html',
+                    dest: 'site/index.html'
+                }]
+            }
+        },
+        clean: {
+            include: ["src/tpls/_build"]
+        },
+        includes: {
+            build: {
+                cwd: 'src/tpls/_includes',
+                src: ['**/*.*'],
+                dest: 'src/tpls/_build'
+            }
+        },
+        kss: {
+            options: {
+                config: 'src/kss-config.json',
+            },
+            dist: {}
+        },
+        jade: {
+            compile: {
+                files: [{
+                    expand: true,
+                    cwd: "src/tpls/_jade",
+                    src: "*.jade",
+                    dest: "site/examples",
+                    ext: ".html"
+                }]
+            }
         }
     });
 
     // These plugins provide necessary tasks.
-    grunt.loadNpmTasks('grunt-contrib-nodeunit');
-    grunt.loadNpmTasks('grunt-contrib-jshint');
-    grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-includes');
+    grunt.loadNpmTasks('grunt-kss');
+    grunt.loadNpmTasks('grunt-contrib-clean');
+    grunt.loadNpmTasks('grunt-contrib-jade');
 
     // Default task.
-    grunt.registerTask('default', ['less', 'copy']);
+    grunt.registerTask('release', ['less', 'copy']);
+    grunt.registerTask('site', ['release', 'includes', 'copy:assets', 'jade', 'kss', 'clean:include']);
+    grunt.registerTask('default', ['site']);
 
 };

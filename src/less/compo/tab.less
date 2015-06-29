@@ -1,0 +1,380 @@
+// 选项卡 Tabs
+//
+// 通常用于类别分组，是常用的布局组件，基于 Bootstrap Tabs
+//
+// * @enable-tabs: 启用核心样式
+// * @enable-tab-positions: 启用不同位置样式
+// * @enable-tab-options: 启用其他配置样式，包括尺寸、颜色
+//
+// Styleguide tab
+
+.enable_tabs() when(@enable-tabs = true) {
+    // 样式
+    //
+    // 提供简洁和丰富两种样式风格的选项卡
+    //
+    // Markup: ../../tpls/_build/nav/tab.hbs
+    //
+    // .tab-styled - 该样式中未激活选项卡项都带背景边框（当使用左侧或右侧选项卡时，启用该样式会不太协调）
+    // .padding-14 - 选项卡的左（上）侧偏移量，取决于 `@extend-level` 的设置
+    //
+    // Styleguide tab.style
+    .nav-tabs {
+        margin-bottom: 0;
+        margin-left: 0;
+        position: relative;
+        top: 1px;
+
+        > li {
+
+            > a {
+                &,
+                &:focus {
+                    border-radius: 0;
+                    margin-right: -1px;
+                    line-height: 18px;
+                    position: relative;
+                    //z-index:11;
+                }
+
+
+                &:active, &:focus {
+                    outline: none !important;
+                }
+            }
+            //a
+            &:first-child > a {
+                margin-left: 0;
+            }
+
+            &.active > a {
+                &,
+                &:hover,
+                &:focus {
+                    z-index: 1;
+                    line-height: 18px;
+                    margin-top: -1px;
+                    box-shadow: 0 -2px 3px 0 rgba(0,0,0,0.15);
+                    color: @tab-active-color;
+                    border-top: 2px solid @tab-active-border;
+                    border-bottom-color: transparent;
+                    background-color: @tab-active-background-color;
+                }
+            }
+        }
+
+
+        > li > a {
+            //icon and badges
+            > .badge {
+                padding: 1px 5px;
+                line-height: 15px;
+                opacity: 0.75;
+            }
+
+            > .@{icon} {
+                opacity: 0.75;
+            }
+        }
+
+        > li.active > a {
+            > .badge, > .@{icon} {
+                opacity: 1;
+            }
+        }
+
+        li .@{icon} {
+            width: 1.25em;
+            display: inline-block;
+            text-align: center;
+        }
+
+        &.tab-styled {
+            > li {
+                > a {
+                    &,
+                    &:focus {
+                        border-color: @tab-border;
+                        background-color: @tab-background-color;
+                        color: @tab-color;
+                    }
+
+                    &:hover {
+                        background-color: #FFF;
+                        color: @tab-hover-color;
+                        border-color: @tab-border;
+                    }
+                }
+
+                &.active > a {
+                    &,
+                    &:hover,
+                    &:focus {
+                        color: @tab-active-color;
+                        border-top: 2px solid @tab-active-border;
+                        border-bottom-color: transparent;
+                        background-color: @tab-active-background-color;
+                    }
+                }
+            }
+        }
+    }
+
+    .tab-content {
+        border: 1px solid @tab-border;
+        padding: 16px 12px;
+        position: relative;
+        //z-index:11;
+        &.no-padding {
+            padding: 0;
+        }
+
+        &.no-border {
+            border: none;
+            padding: 12px;
+        }
+
+        .tab-paddingX (@index) when (@index >= 0) {
+            &.padding-@{index} {
+                padding: unit(@index,px) unit(ceil(@index * 0.75),px);
+            }
+
+            &.no-border.padding-@{index} {
+                padding: unit(@index,px);
+            }
+
+            .tab-paddingX(@index - 2);
+        }
+
+        .tab-paddingX(@extend_level);
+    }
+
+    .nav.nav-tabs {
+        .navtab-paddingX (@index) when (@index > 0) {
+            &.padding-@{index} {
+                padding-left: unit(@index,px);
+            }
+
+            .tabs-right > &.padding-@{index}, .tabs-left > &.padding-@{index} {
+                padding-left: 0;
+                padding-top: unit(@index,px);
+            }
+
+            .navtab-paddingX(@index - 2);
+        }
+
+        .navtab-paddingX(@extend_level);
+    }
+    // 位置
+    //
+    // 提供 top（默认）、bottom、left、right 四种位置
+    // * 例子中 `tab-content` 元素使用了 `no-border` 样式，在某些场景更适宜
+    // * 添加 `.tabs-bottom` （选项卡放置的底部）样式时，`nav-tabs` 元素应在HTML中放在 `tab-content` 之后
+    //
+    // Markup: ../../tpls/_build/nav/tab-position.hbs
+    //
+    // .tabs-left - 左侧
+    // .tabs-right - 右侧
+    //
+    // Styleguide tab.position
+    .enable_tab_positions() when(@enable-tab-positions = true) {
+
+        .nav-tabs {
+
+            .reset_tabs_prop(@orient, @env_orient) {
+                top: auto;
+                @{orient}: 1px;
+                margin-bottom: 0;
+                border-color: @tab-border;
+                border-bottom: 0;
+                border-@{env_orient}: 1px solid @tab-border;
+            }
+
+            .reset_active_tab_border(@orient, @rev_orient) {
+                border-color: @tab-border;
+                border-top-width: 1px;
+                border-@{orient}: 2px solid @tab-active-border;
+                border-@{rev_orient}: 1px solid transparent;
+            }
+
+            .set_float(@orient)when not (@orient = bottom) {
+                float: @orient;
+            }
+
+            .reset_float(@orient) when not (@orient = bottom) {
+                float: none !important; //to override .rtl's
+            }
+
+            .set_tab_positions(@orient, @rev_orient, @shadow) {
+                .tabs-@{orient} > & {
+                    .reset_tabs_prop(@orient, @rev_orient);
+                    .set_float(@orient);
+
+                    > li {
+                        .reset_float(@orient);
+
+                        > a {
+                            &, &:focus, &:hover {
+                                margin: 0;
+                                margin-@{rev_orient}: -1px;
+                            }
+
+                            &:focus, &:hover {
+                                border-color: #eeeeee;
+                                border-@{orient}-color: #dddddd;
+                            }
+                        }
+
+                        &.active {
+                            > a {
+                                &, &:focus, &:hover {
+                                    .reset_active_tab_border(@orient, @rev_orient);
+                                    .box-shadow(~"@{shadow} rgba(0,0,0,0.15)");
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .set_tab_positions(bottom, top, 0 2px 3px 0);
+            .set_tab_positions(left, right, -2px 0 3px 0);
+            .set_tab_positions(right, left, 2px 0 3px 0);
+        }
+
+        .tabs-left,
+        .tabs-right {
+            .tab-content {
+                overflow: auto;
+            }
+        }
+    }
+
+    .enable_tab_positions();
+    // 其他配置
+    //
+    // 包括自定义选项卡间的间隙，选项卡的大小、选项卡的背景等
+    //
+    // Markup: ../../tpls/_build/nav/tab-options.hbs
+    //
+    // .tab-size-bigger.tab-styled - 更大的选项卡
+    // .tab-color-blue - 带颜色的选项卡，只支持 blue，可设置 `@tab-color-blue` 改变颜色
+    // .background-blue.padding-12 - 带背景和内填充的选项卡
+    // .tab-space-4.tab-styled - 选项卡间距 `tab-space-*`，支持从 1 ~ 4 像素
+    //
+    // Styleguide tab.other
+    .enable_tab_options() when (@enable-tab-options = true) {
+        /* bigger tab buttons */
+        .nav-tabs > li:not(.active):not(.open) > a:not(:hover) > .@{icon}:first-child.disabled {
+            color: #909090 !important;
+        }
+        /* bigger tab buttons */
+        .nav-tabs.tab-size-bigger > li > a {
+            padding-left: 14px;
+            padding-right: 14px;
+
+            > .@{icon}:first-child {
+                display: block;
+                margin-bottom: 6px;
+                width: auto;
+            }
+        }
+        //some tab customizations
+        //spaced tabs (top & bottom)
+        .nav-tabs.tab-space-1 > li > a {
+            margin-right: 1px;
+        }
+
+        .nav-tabs.tab-space-2 > li > a {
+            margin-right: 2px;
+        }
+
+        .nav-tabs.tab-space-3 > li > a {
+            margin-right: 3px;
+        }
+
+        .nav-tabs.tab-space-4 > li > a {
+            margin-right: 4px;
+        }
+        //colored tabs
+        .nav-tabs[class*="tab-color-"] > li > a {
+            &, &:focus, &:hover {
+                color: #FFF;
+                border-color: transparent;
+                margin-right: 3px;
+            }
+
+            > .badge {
+                .border-radius(2px);
+            }
+        }
+
+        .nav-tabs[class*="tab-color-"] > li:not(.active) > a {
+            &:hover {
+                opacity: 0.85;
+                border-color: rgba(0,0,0,0.15);
+                border-bottom-color: transparent;
+            }
+
+            > .@{icon}:first-child {
+                color: #FFF !important;
+            }
+
+            > .badge {
+                color: rgba(0,0,0,0.4) !important;
+                background-color: #FFF !important;
+                .border-radius(2px);
+            }
+        }
+
+        .nav-tabs.tab-color-blue > li > a {
+            &, &:focus {
+                background-color: @tab-color-blue;
+            }
+        }
+
+        .nav-tabs[class*="tab-color-"] > li.active > a,
+        .nav-tabs[class*="background-"] > li.active > a {
+            &, &:focus, &:hover {
+                background-color: #FFF;
+                color: darken(desaturate(@tab-color-blue, 20%), 20%);
+                .box-shadow(none) !important;
+            }
+        }
+
+        .nav-tabs.tab-color-blue > li.active > a {
+            &, &:focus, &:hover {
+                color: darken(desaturate(@tab-color-blue, 25%), 25%);
+                border-color: @tab-color-blue @tab-color-blue transparent;
+            }
+
+            .tabs-bottom & {
+                border-color: transparent @tab-color-blue @tab-color-blue;
+            }
+        }
+
+        .nav-tabs.tab-color-blue {
+            border-bottom-color: #C5D0DC;
+        }
+        /* background for tab links */
+        .nav-tabs.background-blue {
+            padding-top: 6px;
+            background-color: #EFF3F8;
+            border: 1px solid #C5D0DC;
+        }
+
+        .tabs-bottom .nav-tabs.background-blue {
+            padding-top: 0;
+            padding-bottom: 6px;
+        }
+
+        .tabs-bottom .nav-tabs.tab-color-blue {
+            border-top: none;
+            border-bottom-color: #C5D0DC;
+        }
+    }
+
+    .enable_tab_options();
+}
+
+.enable_tabs();
