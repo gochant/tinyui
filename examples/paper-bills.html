@@ -1,0 +1,184 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta http-equiv="X-UA-Compatible" content="IE=edge"><link href="../assets/tiny/css/bootstrap.css" rel="stylesheet"><link href="../assets/font-awesome/css/font-awesome.css" rel="stylesheet"><link href="../assets/jquery.scrollbar/jquery.scrollbar.css" rel="stylesheet"><link href="../assets/tiny/css/tiny.css" rel="stylesheet"><!--[if lt IE 9]>
+  <script src="../assets/html5shiv/dist/html5shiv.js"></script>
+  <script src="../assets/respond/dest/respond.min.js"></script>
+<![endif]--></head><body><div class="well">
+    <div class="paper-bills">
+        <h2 class="tc">记账凭证</h2>
+        <div class="metadata">2015年第2期</div>
+        <div class="form-inline mb10">
+            <div class="form-group">
+                <label class="control-label">
+                    凭证字：
+                </label>
+                <select class="form-control">
+                    <option>记</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control w3em" />
+                <label class="control-label">
+                    号
+                </label>
+            </div>
+            <div class="form-group" style="margin-left:30px;">
+                <label class="control-label">
+                    日期：
+                </label>
+                <input type="text" class="form-control" />
+            </div>
+            <div class="form-group pull-right">
+                <label class="control-label">
+                    附单据
+                </label>
+                <input type="text" class="form-control w3em" />
+                <label class="control-label">
+                    张
+                </label>
+            </div>
+        </div>
+        <style>
+        </style>
+        <div class="table-paper-wrapper mb10">
+            <table class="table table-paper table-form table-bordered">
+                <thead>
+                    <tr>
+                        <th>摘要</th>
+                        <th>会计科目</th>
+                        <th>方向</th>
+                        <th class="currency-head">
+                            <div>借方金额</div>
+                            <div class="currency-wrapper clearfix">
+                                <span>亿</span>
+                                <span>千</span>
+                                <span>百</span>
+                                <span>十</span>
+                                <span>万</span>
+                                <span>千</span>
+                                <span>百</span>
+                                <span>十</span>
+                                <span>元</span>
+                                <span>角</span>
+                                <span class="last">分</span>
+                            </div>
+                        </th>
+                        <th class="currency-head">
+                            <div>贷方金额</div>
+                            <div class="currency-wrapper clearfix">
+                                <span>亿</span>
+                                <span>千</span>
+                                <span>百</span>
+                                <span>十</span>
+                                <span>万</span>
+                                <span>千</span>
+                                <span>百</span>
+                                <span>十</span>
+                                <span>元</span>
+                                <span>角</span>
+                                <span class="last">分</span>
+                            </div>
+                        </th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div>寄售商品</div>
+                        </td>
+                        <td>
+                            <div>1101 应收账款</div>
+                        </td>
+                        <td>
+                            <div>借</div>
+                        </td>
+                        <td class="currency-wrapper">
+                            <div class="currency-data">2000</div>
+                        </td>
+                        <td class="currency-wrapper"></td>
+                        <td>
+                            <button class="btn btn-link btn-xs">删除</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" value="" class="form-control" />
+                        </td>
+                        <td>
+                            <input type="text" value="" class="form-control" />
+                        </td>
+                        <td>
+                            <input type="text" value="" class="form-control" />
+                        </td>
+                        <td>
+                            <input type="text" value="" class="form-control" />
+                        </td>
+                        <td>
+                            <input type="text" value="" class="form-control" />
+                        </td>
+                        <td>
+                            <button class="btn btn-default">添加</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" value="" class="form-control" />
+                        </td>
+                        <td>
+                            <input type="text" value="" class="form-control" />
+                        </td>
+                        <td>
+                            <input type="text" value="" class="form-control" />
+                        </td>
+                        <td>
+                            <input type="text" value="" class="form-control" />
+                        </td>
+                        <td>
+                            <input type="text" value="" class="form-control" />
+                        </td>
+                        <td>
+                            <button class="btn btn-default">添加</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" value="" class="form-control" />
+                        </td>
+                        <td>
+                            <input type="text" value="" class="form-control" />
+                        </td>
+                        <td>
+                            <input type="text" value="" class="form-control" />
+                        </td>
+                        <td>
+                            <input type="text" value="" class="form-control" />
+                        </td>
+                        <td>
+                            <input type="text" value="" class="form-control" />
+                        </td>
+                        <td>
+                            <button class="btn btn-default">添加</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <table class="table form-inline">
+            <tr>
+                <td>
+                    <label class="control-label">填制人：</label>
+                    <input type="text" value="" class="form-control w10em" />
+                </td>
+                <td>
+                    <label class="control-label">单位主管：</label>
+                    <input type="text" value="" class="form-control w10em" />
+                </td>
+                <td colspan="2">
+                    <label class="control-label" style="margin-left:-40px;">备注：</label>
+                    <input type="text" value="" class="form-control" style="width:100%;" />
+                </td>
+            </tr>
+        </table>
+    </div>
+
+</div>
+<div id="source-modal" class="modal fade"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><button data-dismiss="modal" aria-hidden="true" class="close">&times;</button><h4 class="modal-title">Source Code</h4></div><div class="modal-body"><pre></pre></div></div></div></div><footer></footer><script src="../assets/jquery/dist/jquery.min.js"></script><script src="../assets/jquery.scrollbar/jquery.scrollbar.min.js"></script><script src="../assets/jquery.layout/dist/jquery.layout-latest.min.js"></script><script src="../assets/jquery.fixedheadertable.js"></script><script src="../assets/tiny/js/bootstrap.js"></script><script src="../assets/tiny/js/jquery.submenu.js"></script><script src="../assets/demo/bootswatch.js"></script><script src="../assets/demo/demo.js"></script></body></html>
