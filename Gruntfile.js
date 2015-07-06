@@ -1,4 +1,4 @@
-/*global module:false*/
+ /*global module:false*/
 module.exports = function (grunt) {
 
     // Project configuration.
@@ -19,11 +19,6 @@ module.exports = function (grunt) {
         copy: {
             main: {
                 files: [{
-                    expand: true,
-                    src: ['bower_components/smalot-bootstrap-datetimepicker/css/bootstrap-datetimepicker.css'],
-                    dest: 'dist/css/',
-                    flatten: true
-                }, {
                     expand: true,
                     src: ['src/assets/bootstrap-theme-tiny/bootstrap.css'],
                     dest: 'dist/css/',
@@ -114,6 +109,6 @@ module.exports = function (grunt) {
     // Default task.
     grunt.registerTask('release', ['less', 'copy']);
     grunt.registerTask('site', ['release', 'includes', 'copy:assets', 'jade', 'kss', 'clean:include']);
-    grunt.registerTask('default', ['site']);
+    grunt.registerTask('default', ['release']);
 
 };

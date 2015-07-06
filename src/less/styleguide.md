@@ -1,9 +1,6 @@
-# Tiny CSS
+# TinyUI
 
-## 简介
-
-tiny 是一个简单的基于 bootstrap 的模板，它包含一个定制版的 bootstrap，
-同时也有一些其他类型的扩展
+TinyUI是一个发展中的样式库，包括一个Bootstrap主题和一些增强性样式
 
 ## 完整示例
 

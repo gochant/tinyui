@@ -1,13 +1,7 @@
 
-# Tiny
+# TinyUI
 
-一个 Bootstrap 主题，并且包含了一些增强性样式
+TinyUI是一个发展中的CSS库，包括一个Bootstrap主题和一些增强性样式
 
-### 工具
+[Doc](http://gochant.github.io/tinyui)
 
-* 使用 [fontello](http://fontello.com/)定制图标
-* 使用 [bootstrap live customizer]()
-
-### 定制
-
-### 下载
