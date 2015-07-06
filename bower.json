@@ -1,5 +1,5 @@
 {
-  "name": "tiny",
+  "name": "tinyui",
   "version": "0.1.0",
   "authors": [
     "channing<guochant@gmail.com>"
@@ -7,14 +7,17 @@
   "description": "Theme and template for Bootstrap",
   "keywords": [
     "tiny",
+    "tinyui",
     "bootstrap"
   ],
   "license": "MIT",
-  "homepage": "http://gochant.github.io/tiny",
+  "homepage": "http://gochant.github.io/tinyui",
   "ignore": [
     "**/.*",
     "node_modules",
     "bower_components",
+    "site",
+    "src",
     "test",
     "tests"
   ],
