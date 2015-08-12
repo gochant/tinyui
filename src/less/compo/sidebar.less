@@ -11,28 +11,49 @@
 
 @icon: tiny-icon; //自定义图标类
 
-@nav-item-icon-size: 18px;
-@nav-item-height: 32px; // 导航项高度
-@nav-item-line-height: @nav-item-height - 10; // 导航项行高，要减去内边距高
-@nav-item-border: #E5E5E5;
+@sidebar-bg-color: #f9fafc;
+@nav-item-border-color: @sidebar-bg-color;
+@nav-item-color: #444;
+
+@nav-item-active-color: @nav-item-color; // 项活动颜色
+@nav-item-hover-color: @nav-item-color; // 项悬停颜色
+@nav-item-hover-border-color: #ccc; // 项悬停边框颜色
+@nav-item-hover-bg-color: @sidebar-bg-color; // 项悬停背景颜色
+@nav-item-active-bg-color: @nav-item-hover-bg-color; // 项活动背景颜色
+
+
 @nav-list-hover-indicator-color: #629cc9;
 @nav-list-active-indicator-color: #2b7dbc;
 @nav-line-color: #d7dce5;
 
-@sidebar-background: #f3f3f3;
-@sidebar-width: 190px;
-@sidebar-min-width: 32px;
-@sidebar-compact-width: 60px;
+@submenu-border-color: @nav-item-hover-border-color;
 
-@submenu-height: 28px; // 子菜单项高度
-@submenu-item-icon-size: 16px;
+@sidebar-width: 190px;
+@sidebar-min-width: 40px;
+@sidebar-compact-width: 60px;
+@nav-item-height: 34px; // 主导航项高度
+@submenu-item-icon-size: 14px;
+@nav-item-line-height: @nav-item-height; // 导航项行高，要减去内边距高
+
+@submenu-height: 27px; // 子菜单项高度（只为计算不能更改，需要根据padding的实际情况）
+
+
+@nav-item-icon-size: 14px;
+
+
+
+
+
+
+
+
 @submenu-icon-top: @submenu-height / 2;
 @submenu-item-background: #FFF;
 
 @sidebar-min-submenu-width: 176px;
 @sidebar-min-submenu-border: #ccc;
 
-@sidebar-toggle-bg-color: @sidebar-background;
+@sidebar-toggle-bg-color: @sidebar-bg-color;
 
 
 .calculate_top(@font-size) {
@@ -58,14 +79,14 @@
         // 顶级菜单项
         > li {
             border: solid @nav-tabs-border-color;
-            border-width: 0 0 1px;
+            border-width: 0;
             // 前面显示的指示符
             &:before {
                 display: none;
                 content: "";
                 position: absolute;
-                top: -1px;
-                height: @nav-item-height + 3;
+                top: 0;
+                height: @nav-item-height;
                 left: 0;
                 z-index: 1;
                 width: 3px;
@@ -73,54 +94,42 @@
                 overflow: hidden;
                 background-color: @nav-list-active-indicator-color;
             }
-            // 悬停时显示
+            // 指示符悬停时显示
             &:hover:before {
-                display: block;
-            }
-            // 活动时后面竖状条
-            &.active:after {
-                display: block;
-                content: "";
-                position: absolute;
-                right: -2px;
-                top: -1px;
-                bottom: 0;
-                z-index: 1;
-                border: 2px solid;
-                border-width: 0 2px 0 0;
-                border-color: @nav-list-active-indicator-color;
-            }
-
-
-            &.hover.active > a:after {
                 display: block;
             }
 
             > a {
-                font-size: 14px;
+                font-size: 12px;
                 height: @nav-item-height;
                 line-height: @nav-item-line-height;
+                color: @nav-item-color;
+                padding: 0 10px;
 
                 &:focus {
-                    background: @sidebar-background;
+                    background: @sidebar-bg-color;
                 }
                 // 大图标
                 > .menu-icon {
                     min-width: 20px;
-                    vertical-align: baseline;
+                    vertical-align: middle;
                     text-align: center;
-                    font-size: 16px;
+                    font-size: @submenu-item-icon-size;
+                    border-width: 1px 0;
+                    border-style: solid;
+                    border-color: @nav-item-border-color;
                 }
 
                 > .menu-text {
-                    padding-left: 10px;
+                    font-weight: bold;
+                    padding-left: 0;
                 }
             }
         }
         // 通用菜单项
         li {
             position: relative;
-            padding: 0 0 1px 0;
+            padding: 0;
 
             > a:hover,
             > a:focus {
@@ -184,13 +193,9 @@
 
             &.active > a {
                 font-weight: bold;
-                color: #2b7dbc;
-
-                .menu-icon.fa-caret-right {
-                    color: #c86139;
-                }
+                color: @nav-item-color;
                 // 活动指示图标
-                &:after {
+                /*&:after {
                     display: block;
                     content: "";
                     position: absolute;
@@ -199,7 +204,7 @@
                     border: 1px solid transparent;
                     border-right-color: @nav-list-active-indicator-color;
                     border-width: 6px 3px;
-                }
+                }*/
             }
             // 对于可展开的禁止显示活动指示图标
             &.open > a:after {
@@ -288,7 +293,7 @@
         }
         // 一级子菜单
         > li > .submenu {
-
+            // 装饰线
             &:before {
                 content: "";
                 display: block;
@@ -305,7 +310,7 @@
             }
 
             > li {
-
+                // 装饰线
                 &:before {
                     content: "";
                     display: block;
@@ -395,35 +400,11 @@
             font-weight: normal;
         }
     }
-
-    .sidebar-toggle {
-        border-style: solid;
-        border-width: 0 0 1px;
-        text-align: center;
-        padding: 3px 0;
-        position: relative;
-        background-color: @sidebar-toggle-bg-color;
-        border-color: #e0e0e0;
-
-        .tiny-icon {
-            text-align: center;
-            padding: 0 4px;
-            line-height: 16px;
-            cursor: pointer;
-            font-size: 14px;
-            border-radius: 100%;
-            border: 1px solid;
-            position: relative;
-            border-color: #bbb;
-            color: #aaa;
-            background-color: #fff;
-        }
-    }
 }
 
-
-.sidebar.sidebar-compact,
 .sidebar.sidebar-min {
+    width: @sidebar-min-width;
+
     .nav-list {
 
         > li {
@@ -433,35 +414,67 @@
 
             &:before {
                 height: auto;
-                bottom: -1px;
+                bottom: 0;
             }
 
             > a {
+                position: relative;
+                padding: 0;
+
+                > .menu-icon {
+                    width: 100%;
+                    height: @nav-item-height;
+                    line-height: @nav-item-line-height;
+                    vertical-align: initial;
+                }
+
+                > .menu-text {
+                    position: absolute;
+                    display: none;
+                    top: 0;
+                    left: 100%;
+                    z-index: 1025;
+                    width: @sidebar-min-submenu-width;
+                    height: @nav-item-height;
+                    line-height: @nav-item-line-height;
+                    padding-left: 12px;
+                    border: 1px solid @nav-item-hover-border-color;
+                    border-left: 0;
+                    /*border-bottom-color: transparent;*/
+                    background-color: @nav-item-hover-bg-color;
+                    color: @nav-item-hover-color;
+                    box-shadow: 2px 1px 2px 0 rgba(0,0,0,.1);
+                }
 
                 .arrow {
                     display: none;
                 }
             }
 
-
             > .submenu {
                 position: absolute;
                 z-index: 1026;
                 left: 100%;
-                top: -2px;
                 padding-bottom: 2px;
                 width: @sidebar-min-submenu-width;
                 display: none !important; // 为了解决在切换sidebar-min时无法隐藏的bug，所以要使用 important
-                background-color: #fff;
-                border: 1px solid @sidebar-min-submenu-border;
-                border-top-color: #e6e6e6;
+                background-color: @sidebar-bg-color;
+                border: 1px solid @submenu-border-color;
+                /*border-top-color: @submenu-border-color;*/
                 box-shadow: 2px 2px 2px 0 rgba(0,0,0,.1);
+                top: 100%;
+                margin-top: -1px;
+                border-top-color: transparent;
             }
 
             &.hover-show,
             &:hover {
                 > a > .menu-text {
                     display: block;
+                }
+
+                a > .menu-icon {
+                    border-color: @nav-item-hover-border-color;
                 }
 
                 > .arrow {
@@ -471,81 +484,6 @@
 
             &:hover > .submenu {
                 display: block !important;
-            }
-        }
-    }
-}
-
-
-.sidebar.sidebar-compact {
-    width: @sidebar-compact-width;
-
-    .nav-list {
-        // 顶级菜单项
-        > li {
-
-            > a {
-                position: relative;
-                padding: 0;
-                height: auto;
-
-                > .menu-icon {
-                    display: block;
-                    text-align: center;
-                    position: relative;
-                    line-height: 28px;
-                    font-size: 18px;
-                }
-
-                > .menu-text {
-                    display: block;
-                    padding-left: 0;
-                    text-align: center;
-                    line-height: 18px;
-                }
-            }
-        }
-    }
-}
-
-.sidebar.sidebar-min {
-    width: @sidebar-min-width;
-
-    .nav-list {
-        // 顶级菜单项
-        > li {
-            // 悬停时隐藏
-            &.active:hover:after {
-                display: none;
-            }
-
-            > a {
-                position: relative;
-                padding: 0;
-                height: @sidebar-min-width - 2;
-
-                > .menu-icon {
-                    width: 100%;
-                    vertical-align: bottom;
-                }
-
-                > .menu-text {
-                    position: absolute;
-                    top: -1px;
-                    left: 100%;
-                    z-index: 1025;
-                    width: @sidebar-min-submenu-width;
-                    line-height: normal;
-                    padding: 5px 10px 5px 12px;
-                    border: 1px solid;
-                    display: none;
-                    box-shadow: 2px 1px 2px 0 rgba(0,0,0,.1);
-                    border-color: @sidebar-min-submenu-border;
-                }
-            }
-
-            > .submenu {
-                margin-top: @nav-item-height;
             }
         }
     }

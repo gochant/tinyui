@@ -12,7 +12,6 @@
     "grunt-includes": "^0.5.1",
     "grunt-kss": "^2.0.0",
     "grunt-contrib-clean": "^0.6.0",
-    "grunt-contrib-jade": "^0.14.1",
-    "kss": "^2.1.0"
+    "grunt-contrib-jade": "^0.14.1"
   }
 }
