@@ -1,4 +1,4 @@
-// 导航菜单 Sidebar
+// 侧边导航 Sidebar
 //
 // 侧边栏导航，通常用作整个应用的主菜单
 //
@@ -40,13 +40,6 @@
 
 @nav-item-icon-size: 14px;
 
-
-
-
-
-
-
-
 @submenu-icon-top: @submenu-height / 2;
 @submenu-item-background: #FFF;
 
@@ -73,6 +66,7 @@
     }
 }
 
+
 .sidebar {
     /*width: @sidebar-width;*/
     .nav-list {
@@ -98,6 +92,14 @@
             &:hover:before {
                 display: block;
             }
+            // 活动菜单项
+            &.active:before {
+                display: block;
+
+                > a > .menu-text {
+                    font-weight: bold;
+                }
+            }
 
             > a {
                 font-size: 12px;
@@ -121,8 +123,9 @@
                 }
 
                 > .menu-text {
-                    font-weight: bold;
+                    font-weight: normal;
                     padding-left: 0;
+                    border-color: transparent;
                 }
             }
         }
@@ -402,12 +405,23 @@
     }
 }
 
+.sidebar-toggle {
+    position: fixed;
+    bottom: 5px;
+    left: 15px;
+    color: #999;
+}
+
 .sidebar.sidebar-min {
     width: @sidebar-min-width;
 
     .nav-list {
 
         > li {
+            &:hover > .arrow {
+                display: none;
+            }
+
             &.active > a:after {
                 display: block;
             }

@@ -1,4 +1,4 @@
- /*global module:false*/
+/*global module:false*/
 module.exports = function (grunt) {
 
     // Project configuration.
@@ -81,9 +81,10 @@ module.exports = function (grunt) {
         },
         kss: {
             options: {
-                config: 'src/kss-config.json',
+                "config": "src/kss-config.json"
             },
-            dist: {}
+            dist: {
+            }
         },
         jade: {
             compile: {

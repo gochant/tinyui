@@ -21,12 +21,13 @@
 //
 // .panel-shadow - 带阴影
 // .panel-lg - 大面板
+// .panel-sm - 小面板
 //
 // Styleguide panel.extra
 
 // Toolbar
 //
-// 放置工具条
+// 带工具条的模板
 //
 // Markup: ../../tpls/_build/panel/panel-with-toolbar.html
 //
@@ -34,7 +35,7 @@
 
 // Tab
 //
-// tab
+// 带 Tab 的面板
 //
 // Markup: ../../tpls/_build/panel/panel-tab.html
 //
@@ -42,7 +43,7 @@
 
 // Table
 //
-// 
+// 带 Table 的面板
 //
 // Markup: ../../tpls/_build/panel/panel-table.html
 //
@@ -91,10 +92,21 @@
 }
 
 
-.panel-lg {
+.panel.panel-lg {
     .panel-heading,
     .panel-footer {
         padding: @panel-lg-heading-padding;
+    }
+}
+.panel.panel-sm {
+    .panel-heading {
+        padding: 5px 12px;
+    }
+
+    &.table-like {
+        .panel-heading {
+            border-bottom-width: 2px;
+        }
     }
 }
 
@@ -106,3 +118,8 @@
         padding-left: 3px;
     }
 }
+
+.panel-body.no-padding {
+    padding: 1px\9 !important;
+}
+
