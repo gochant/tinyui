@@ -787,6 +787,17 @@ input[type="checkbox"] {
 .sidebar.sidebar-min .nav-list > li:hover > .submenu {
   display: block !important;
 }
+.sidebar-content a:hover {
+  text-decoration: none;
+}
+.sidebar-content .logo-mini {
+  font-size: 22px;
+  display: block;
+  padding: 5px;
+  text-align: center;
+  color: white;
+  background-color: #00a65a;
+}
 .navbar-fixed-top,
 .navbar-fixed-bottom {
   z-index: 1000;
@@ -1338,6 +1349,7 @@ th.sortable.date.desc:after {
   position: absolute;
   top: 0;
   bottom: 0;
+  overflow: auto;
 }
 /*@import "separator";*/
 /*@import "size";*/
@@ -1837,6 +1849,21 @@ body.admin .main-fixed {
   top: 41px;
   bottom: 0;
 }
+.admin.admin-min .sidebar-content {
+  width: 42px;
+  overflow: visible;
+}
+.admin.admin-min .main-fixed {
+  padding-left: 42px;
+  margin-left: 0;
+  width: 100%;
+}
+.admin.no-padding .sidebar-content {
+  top: 0;
+}
+.admin.no-padding .main-fixed {
+  top: 0;
+}
 .login {
   margin-top: 50px;
 }
@@ -2300,6 +2327,9 @@ fieldset {
 }
 .scroll-wrapper {
   height: 100%;
+}
+.noty_message {
+  padding: 5px !important;
 }
 .modal-dialog.ui-dialog {
   margin: 0 auto;
