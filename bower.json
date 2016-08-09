@@ -30,10 +30,11 @@
     "kss-node-template-tiny": "^0.1.0",
     "requirejs-text": "latest",
     "require-css": "latest",
-    "smalot-bootstrap-datetimepicker": "latest",
+    "bs-datetimepicker": "latest",
     "jquery.inputmask": "latest",
     "jquery-validation": "latest",
     "jquery-validation-unobtrusive": "latest",
+    "jquery-validation-bootstrap-tooltip": "latest",
     "noty": "latest",
     "jquery-placeholder": "latest",
     "jquery.scrollbar": "latest",
@@ -42,7 +43,6 @@
     "jquery-file-upload": "latest",
     "typeahead.js": "latest",
     "font-awesome": "latest",
-    "jquery-validation-bootstrap-tooltip": "latest",
     "select2-bootstrap-css": "latest"
   }
 }

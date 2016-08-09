@@ -1,0 +1,66 @@
+﻿
+// 桌面布局，全屏
+.desktop {
+    zoom: 1;
+    overflow: hidden;
+    width: auto;
+    height: auto;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    .main-container,
+    .main-content,
+    .page-content,
+    .full {
+        height: 100%;
+    }
+
+    .page-content {
+        padding: 0;
+    }
+}
+
+// Wrapper
+//
+// 简单两栏布局
+//
+// Markup: markups/wrapper.html
+//
+// Styleguide layouts.wrapper
+
+.wrapper {
+    .side {
+        float: left;
+        width: 180px;
+    }
+
+    .content {
+        margin-left: 180px;
+    }
+}
+
+// Static Row
+//
+// 固定的栅格布局（常用在 flexbox 内部形成多栏自适应布局）
+//
+// Markup: markups/row-static.html
+//
+// Styleguide layouts.rowstatic
+
+.row-static {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+
+    .col-static {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        overflow: auto;
+    }
+}

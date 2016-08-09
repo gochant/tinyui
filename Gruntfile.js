@@ -17,16 +17,21 @@ module.exports = function (grunt) {
             }
         },
         copy: {
-            main: {
+            release: {
                 files: [{
                     expand: true,
-                    src: ['src/assets/bootstrap-theme-tiny/bootstrap.css'],
+                    src: ['src/assets/bootstrap-flat/bootstrap.css'],
                     dest: 'dist/css/',
                     flatten: true
                 }, {
                     expand: true,
-                    src: ['src/assets/bootstrap-theme-tiny/bootstrap.js'],
+                    src: ['src/assets/bootstrap-flat/bootstrap.js'],
                     dest: 'dist/js/', flatten: true
+                }, {
+                    expand: true,
+                    src: ['src/assets/bootstrap-flat/*.less'],
+                    dest: 'dist/less/',
+                    flatten: true
                 }, {
                     expand: true,
                     src: ['src/fonts/*'],
@@ -38,7 +43,7 @@ module.exports = function (grunt) {
                     filter: 'isFile', flatten: true
                 }]
             },
-            assets: {
+            site: {
                 files: [{
                     expand: true,
                     cwd: 'bower_components/',
@@ -72,13 +77,6 @@ module.exports = function (grunt) {
         clean: {
             include: ["src/tpls/_build"]
         },
-        includes: {
-            build: {
-                cwd: 'src/tpls/_includes',
-                src: ['**/*.*'],
-                dest: 'src/tpls/_build'
-            }
-        },
         kss: {
             options: {
                 "config": "src/kss-config.json"
@@ -90,7 +88,7 @@ module.exports = function (grunt) {
             compile: {
                 files: [{
                     expand: true,
-                    cwd: "src/tpls/_jade",
+                    cwd: "src/examples",
                     src: "*.jade",
                     dest: "site/examples",
                     ext: ".html"
@@ -108,8 +106,8 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-jade');
 
     // Default task.
-    grunt.registerTask('release', ['less', 'copy']);
-    grunt.registerTask('site', ['release', 'includes', 'copy:assets', 'jade', 'kss', 'clean:include']);
+    grunt.registerTask('release', ['less', 'copy:release']);
+    grunt.registerTask('site', ['release', 'copy:site', 'jade', 'kss', 'clean:include']);
     grunt.registerTask('default', ['release']);
 
 };

@@ -1,0 +1,143 @@
+// 面板 Panel
+//
+// 通常用于界面元素的分组显示
+//
+// Styleguide components.panels
+
+// Bootstrap
+//
+// Bootstrap 的默认内容
+//
+// Markup: ../../tpls/_build/panel/panel-base.html
+//
+// Styleguide components.panels.bootstrap
+
+
+// Extra
+//
+// 额外的扩展
+//
+// Markup: ../../tpls/_build/panel/panel-tpl.hbs
+//
+// .panel-shadow - 带阴影
+// .panel-lg - 大面板
+// .panel-sm - 小面板
+//
+// Styleguide components.panels.extra
+
+// Toolbar
+//
+// 带工具条的模板
+//
+// Markup: ../../tpls/_build/panel/panel-with-toolbar.html
+//
+// Styleguide components.panels.toolbar
+
+// Tab
+//
+// 带 Tab 的面板
+//
+// Markup: ../../tpls/_build/panel/panel-tab.html
+//
+// Styleguide components.panels.tab
+
+// Table
+//
+// 带 Table 的面板
+//
+// Markup: ../../tpls/_build/panel/panel-table.html
+//
+// Styleguide components.panels.table
+
+.panel {
+
+    .panel-heading {
+
+        &.clearfix {
+            height: @panel-heading-height;
+            padding: 0 5px;
+
+            .panel-title,
+            .panel-toolbar {
+                line-height: @panel-heading-height;
+                // fix input-group vertical-align bug!!
+                .form-group {
+                    line-height: @line-height-base;
+                }
+            }
+
+            .nav-tabs {
+                margin: 0;
+                border: 0;
+                top: @panel-heading-nav-top;
+            }
+        }
+    }
+
+    > .panel-body {
+        border-width: 0;
+        background-color: transparent;
+    }
+}
+
+
+
+.panel-shadow {
+    border: 1px solid #cfcfcf;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+
+.panel.panel-lg {
+    .panel-heading,
+    .panel-footer {
+        padding: @panel-lg-heading-padding;
+    }
+}
+
+.panel.panel-sm {
+    .panel-heading {
+        padding: 5px 12px;
+    }
+
+    &.table-like {
+        .panel-heading {
+            border-bottom-width: 2px;
+        }
+    }
+}
+
+.panel-toolbar {
+    padding: @panel-footer-padding;
+    background: @panel-footer-bg;
+    border-bottom: 1px solid @panel-inner-border;
+}
+
+.panel-toolbar-sm {
+    padding: @padding-small-vertical @padding-small-horizontal;
+}
+
+.panel-toolbar-xs {
+    padding: @padding-xs-vertical @padding-xs-horizontal;
+}
+
+.panel-xs {
+    .panel-heading,
+    .panel-body,
+    .panel-footer {
+        padding: @panel-xs-element-padding;
+    }
+}
+
+.panel-transparent {
+    box-shadow: none;
+
+    > .panel-heading {
+        border-bottom: 1px solid @panel-transparent-heading-border-color;
+        padding-left: 3px;
+    }
+}
+
+.panel-body.no-padding {
+    padding: 1px\9 !important;
+}

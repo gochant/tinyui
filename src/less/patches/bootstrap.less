@@ -39,7 +39,7 @@ input {
 
 // 因为 bootstrap 写死了该属性，所以这里需要覆盖
 .list-group-item {
-    padding: 5px 10px;
+    padding: @list-group-item-padding;
 }
 
 .modal-header .close {
@@ -87,11 +87,6 @@ input[type="checkbox"] {
     padding-right: 25px;
 }
 
-// 缩小 horizontal 高度
-.form-horizontal .form-group {
-    margin-bottom: 10px;
-}
-
 // 覆盖只读样式
 .form-control[readonly] {
     background-color: #fff;
@@ -99,14 +94,9 @@ input[type="checkbox"] {
 
 // 调整默认 legend 样式
 legend {
-    font-size: 13px;
-    padding: 5px;
+    padding: @legend-padding-vertial @legend-padding-horizontal;
     font-weight: bold;
-    /* border-left: 3px solid #ddd; */
     background-color: #eee;
-    margin-bottom: 10px;
-}
-
-fieldset {
-    margin-bottom: 17px;
+    border-left: 3px solid #ddd;
+    border-bottom-color: transparent;
 }
