@@ -16,9 +16,27 @@
     }
 }
 
+// æ•°æ®è¡¨ DataTable
+//
+// ç”¨è¡¨æ ¼å±•ç¤ºæ•°æ®
+//
+// Markup: markups/datatable.html
+//
+// Styleguide elements.datatable
+
 // datatable
 
-// ±í¸ñ sortable
+.datatable td {
+    .text-ellipsis();
+    word-break: break-all;
+    vertical-align: middle;
+}
+
+.datatable-header > .table,
+.datatable-content > .table {
+    table-layout: fixed;
+    margin: 0;
+}
 
 .datatable-header,
 .datatable-content {
@@ -38,8 +56,7 @@
 }
 
 .datatable-header {
-    padding-right: 17px;
-
+    padding-right: 17px; // æ»šåŠ¨æ¡å®½åº¦
     thead > tr > th {
         border-bottom: 0;
     }
@@ -68,15 +85,13 @@
     border: 1px solid transparent;
 }
 
+// è¡¨æ ¼ sortable
 th.sortable {
     position: relative;
     cursor: pointer;
 
     &:after {
-        position: absolute;
-        bottom: 4px;
-        right: 8px;
-        display: block;
+        float: right;
         font-family: 'Glyphicons Halflings';
         opacity: 0.5;
         content: "\e150";
@@ -123,24 +138,14 @@ th.sortable {
     }
 }
 
-
-//Ìí¼Ó±í¸ñ×ÔÊÊÓ¦ÊôĞÔ
-.table-fixd {
-    table-layout: fixed;
-
-    td {
-        word-break: break-all;
-    }
-}
-
-// ·Ö×éµÄ±í¸ñÑùÊ½
+// åˆ†ç»„çš„è¡¨æ ¼æ ·å¼
 
 .tr-group {
     background-color: #eee;
     font-weight: bold;
 }
 
-// ÁĞ±í£¨´øĞüÍ£ÑùÊ½£©
+// åˆ—è¡¨ï¼ˆå¸¦æ‚¬åœæ ·å¼ï¼‰
 
 .list-group-hover {
     .list-group-item:not(.k-state-selected):hover {

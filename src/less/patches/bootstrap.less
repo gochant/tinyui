@@ -1,5 +1,11 @@
 //--- bootstrap 补丁
 
+@checkbox-radio-margin-top: 4px;
+@checkbox-radio-margin-top-ie-9: 1px;
+
+/* 表格
+---------------------------------------------------------------- */
+
 // 表格标题居中
 .table {
     > thead {
@@ -9,8 +15,19 @@
             }
         }
     }
+
+    > tbody {
+        > tr {
+            > td {
+                vertical-align: middle;
+            }
+        }
+    }
 }
 
+
+/* 表单
+---------------------------------------------------------------- */
 
 // 清除所有表单元素阴影
 input.form-control,
@@ -36,40 +53,12 @@ input {
     box-shadow: none;
 }
 
-
-// 因为 bootstrap 写死了该属性，所以这里需要覆盖
-.list-group-item {
-    padding: @list-group-item-padding;
-}
-
-.modal-header .close {
-    margin-top: 2px;
-}
-
-// 重设置标签样式
-.label {
-    padding-left: 1em;
-    padding-right: 1em;
-    border-radius: 0;
-    font-weight: 300;
-}
-
-.badge {
-    font-weight: 300;
-}
-
 // 使 radio 和 checkbox 对齐
 input[type="radio"],
 input[type="checkbox"] {
-    margin: 2px 0 0;
+    margin: @checkbox-radio-margin-top 0 0;
+    margin-top: ~"@{checkbox-radio-margin-top-ie-9} \9"; /* IE8-9 */
 }
-
-
-.pagination-sm > li > a,
-.pagination-sm > li > span {
-    padding: 2px 8px;
-}
-
 
 // --------
 // 验证相关样式
@@ -99,4 +88,36 @@ legend {
     background-color: #eee;
     border-left: 3px solid #ddd;
     border-bottom-color: transparent;
+}
+
+
+/* 界面元素
+---------------------------------------------------------------- */
+
+// 因为 bootstrap 写死了该属性，所以这里需要覆盖
+.list-group-item {
+    padding: @list-group-item-padding;
+}
+
+.modal-header .close {
+    margin-top: 2px;
+}
+
+// 重设置标签样式
+.label {
+    padding-left: 1em;
+    padding-right: 1em;
+    border-radius: 0;
+    font-weight: 300;
+}
+
+.badge {
+    font-weight: 300;
+}
+
+
+
+.pagination-sm > li > a,
+.pagination-sm > li > span {
+    padding: 2px 8px;
 }

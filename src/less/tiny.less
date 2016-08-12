@@ -1,17 +1,14 @@
 
-// Bootstrap
+// Variables & Mixins
 @import "../assets/bootstrap-flat/variables.less";
 @import "../assets/bootstrap-flat/mixins.less";
-@import "../assets/bootstrap-theme-tiny/theme.less";
-
-// Variables
 @import "variables";
 @import "features";
 @import "mixins";
 
 // Basic
 @import "basic/reboot.less";
-
+@import "basic/icon.less";
 
 // 布局 Layouts
 //
@@ -20,6 +17,13 @@
 // Styleguide layouts
 @import "layouts/box.less";
 @import "layouts/flexbox.less";
+
+// 容器 Containers
+//
+// 包裹其他界面元素，并提供一些具体信息
+//
+// Styleguide containers
+@import "containers/panels.less";
 
 // 导航 Navigations
 //
@@ -30,19 +34,15 @@
 @import "navigations/sidebar";
 @import "navigations/navbar";
 
-// 组件 Components
+// 界面元素 Elements
 //
 // 一些界面元素
 //
-// Styleguide components
-/*@import "less/icon/fonttiny.less";*/
-@import "components/panels";
-@import "components/header";
-@import "components/icon";
-@import "components/label";
-@import "components/progress";
-@import "components/table";
-@import "components/loading";
+// Styleguide elements
+@import "elements/label";
+@import "elements/progress";
+@import "elements/datatable";
+@import "elements/loading";
 
 // 表单 Forms
 //
@@ -52,17 +52,23 @@
 @import "forms/layout.less";
 
 
-// Custom
-@import "utility/utility";
-@import "utility/helper";
-@import "utility/color";
+// 帮助类 Helper
+//
+// 可独立使用的原子类，尽量少用
+//
+// Styleguide helper
+@import "utility/box-model.less";
 
 // Cases
 @import "cases/admin";
 @import "cases/login";
 @import "cases/paper-bills";
 
+// 补丁 Patches
+//
 // Patches for ThirdParty
+//
+// Styleguide patches
 @import "patches/bootstrap";
 @import "patches/kendoui";
 @import "patches/bootstrap-kendoui";
