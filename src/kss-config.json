@@ -1,5 +1,6 @@
 {
-  "source": "./less",
+  "title": "Tiny'",
+  "source": [ "./less" ],
   "destination": "../site/doc",
   "template": "../bower_components/kss-node-template-tiny",
   "css": [
@@ -9,8 +10,8 @@
   "js": [
     "../assets/jquery/dist/jquery.min.js",
     "../assets/tiny/js/bootstrap.js",
-    "../assets/tiny/js/jquery.submenu.js",
-    "../assets/demo.js"
+    "../assets/tiny/js/tiny.js",
+    "../assets/demo/demo.js"
   ],
   "xdemo": false
 }

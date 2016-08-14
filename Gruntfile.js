@@ -84,13 +84,13 @@ module.exports = function (grunt) {
             dist: {
             }
         },
-        jade: {
+        pug: {
             compile: {
                 files: [{
                     expand: true,
-                    cwd: "src/examples",
-                    src: "*.jade",
-                    dest: "site/examples",
+                    cwd: "./src/examples",
+                    src: "*.pug",
+                    dest: "./site/examples",
                     ext: ".html"
                 }]
             }
@@ -103,11 +103,11 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-includes');
     grunt.loadNpmTasks('grunt-kss');
     grunt.loadNpmTasks('grunt-contrib-clean');
-    grunt.loadNpmTasks('grunt-contrib-jade');
+    grunt.loadNpmTasks('grunt-contrib-pug');
 
     // Default task.
     grunt.registerTask('release', ['less', 'copy:release']);
-    grunt.registerTask('site', ['release', 'copy:site', 'jade', 'kss', 'clean:include']);
+    grunt.registerTask('site', ['release', 'copy:site', 'pug', 'kss', 'clean:include']);
     grunt.registerTask('default', ['release']);
 
 };

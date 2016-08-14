@@ -94,9 +94,8 @@ legend {
 /* 界面元素
 ---------------------------------------------------------------- */
 
-// 因为 bootstrap 写死了该属性，所以这里需要覆盖
-.list-group-item {
-    padding: @list-group-item-padding;
+.form-inline .form-group:not(:last-child){
+    margin-right: 1em;
 }
 
 .modal-header .close {
@@ -113,11 +112,4 @@ legend {
 
 .badge {
     font-weight: 300;
-}
-
-
-
-.pagination-sm > li > a,
-.pagination-sm > li > span {
-    padding: 2px 8px;
 }

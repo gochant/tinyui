@@ -17,6 +17,8 @@
 - 移除大部分原子类
 - 移除纯装饰性样式 space
 - 移除 table-fixd
+- 移除 page-loader
+- 移除 case： paper bills
 ### Changed
 
 ## [1.0.0] - 2015-10-13

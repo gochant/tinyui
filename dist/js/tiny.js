@@ -4,7 +4,7 @@
 
     var pluginName = "submenu";
     var defaults = {};
-    var MIN_CLASS = 'sidebar-min';
+    var MIN_CLASS = 'menu-vertical-min';
 
     function Plugin(element, options) {
         this.element = element;
@@ -13,47 +13,50 @@
         this._defaults = defaults;
         this._name = pluginName;
         this.toggleIcons = ['fa-angle-double-left', 'fa-angle-double-right'];
-        this.arrowIcons = ['fa-angle-left', 'fa-angle-down'];
+        this.submenuCls = '.menu-submenu';
         this.init();
     }
 
     $.extend(Plugin.prototype, {
         init: function () {
-            var $navlist = $(this.element).find('.nav-list');
-            var $toggle = $(this.element).find('.sidebar-toggle');
+            var $navlist = $(this.element).find('.menu-nav');
+            var $toggle = $(this.element).find('.menu-toggle');
             var me = this;
 
+            // 初始化子级指示器
             $.each($navlist.find('li'), function (i, li) {
                 var $li = $(li);
-                var $submenu = $li.children('.submenu');
+                var $submenu = $li.children(me.submenuCls);
                 var $ddtoggle = $li.children('.dropdown-toggle');
-                var arrowCls = $li.hasClass('open') ? me.arrowIcons[1] : me.arrowIcons[0];
                 if ($submenu.length > 0) {
-                    if ($li.children('.arrow').length === 0) {
-                        $submenu.before('<b class="arrow"></b>');
-                    }
-                    if ($ddtoggle.children('.arrow').length === 0) {
-                        $ddtoggle.append('<b class="arrow fa ' + arrowCls + '"></b>');
+                    if ($ddtoggle.children('.menu-child_indicator').length === 0) {
+                        $ddtoggle.append('<b class="menu-child_indicator fa"></b>');
                     }
                 }
             });
 
+            // 点击事件
             $navlist.on('click', 'a', function (e) {
+                e.preventDefault();
                 var $link = $(e.currentTarget);
                 var $li = $link.parent();
 
-                if ($li.children('.submenu').length === 0) {
+                // 无子菜单则直接激活
+                if ($li.children('.menu-submenu').length === 0) {
                     me.active($li);
                 }
 
+                // 有子菜单则视情况打开子菜单
                 if ($link.hasClass('dropdown-toggle')) {
-                    if ($li.parent().hasClass('nav-list') && me.minimized || $li.hasClass('hover')) {
+                    if (me.minimized || $li.hasClass('hover')) {
                         return;
                     }
                     me.toggleDisplay($li);
                 }
 
             });
+
+            // 切换显示模式
             $toggle.on('click', function (e) {
                 e.preventDefault();
                 if (me.minimized) {
@@ -79,23 +82,17 @@
         _toggleSubmenu: function ($item, mode, callback) {
             var me = this;
             var animate = 'slideDown';
-            var rmvClsIdx = 0;
-            var addClsIdx = 1;
             var openHd = 'addClass';
             callback || (callback = function () { });
 
             if (mode === 'hide') {
                 animate = 'slideUp';
-                rmvClsIdx = 1;
-                addClsIdx = 0;
                 openHd = 'removeClass';
             }
 
-            $item.children('.submenu')[animate]('fast', function () {
+            $item.children(this.submenuCls)[animate]('fast', function () {
                 $item[openHd]('open');
-                $item.children('.dropdown-toggle').children('.arrow')
-                    .removeClass(me.arrowIcons[rmvClsIdx])
-                    .addClass(me.arrowIcons[addClsIdx]);
+
                 callback();
             });
             return this;

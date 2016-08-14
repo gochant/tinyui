@@ -17,6 +17,8 @@
 // Styleguide layouts
 @import "layouts/box.less";
 @import "layouts/flexbox.less";
+@import "layouts/desktop.less";
+@import "layouts/static.less";
 
 // 容器 Containers
 //
@@ -31,7 +33,7 @@
 //
 // Styleguide navigations
 @import "navigations/tab";
-@import "navigations/sidebar";
+@import "navigations/menu";
 @import "navigations/navbar";
 
 // 界面元素 Elements
@@ -43,6 +45,7 @@
 @import "elements/progress";
 @import "elements/datatable";
 @import "elements/loading";
+@import "elements/list.less";
 
 // 表单 Forms
 //
@@ -50,6 +53,7 @@
 //
 // Styleguide forms
 @import "forms/layout.less";
+@import "forms/controls.less";
 
 
 // 帮助类 Helper
@@ -57,14 +61,13 @@
 // 可独立使用的原子类，尽量少用
 //
 // Styleguide helper
-@import "utility/box-model.less";
+@import "helpers/box-model.less";
 
 // Cases
 @import "cases/admin";
 @import "cases/login";
-@import "cases/paper-bills";
 
-// 补丁 Patches
+// 第三方库补丁 Patches
 //
 // Patches for ThirdParty
 //

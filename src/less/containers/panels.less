@@ -4,20 +4,11 @@
 //
 // Styleguide containers.panels
 
-// Bootstrap
-//
-// Bootstrap 的默认内容
-//
-// Markup: markups/panel-base.html
-//
-// Styleguide containers.panels.bootstrap
-
-
-// Extra
+// Bootstrap Extra
 //
 // 额外的扩展
 //
-// Markup: markups/panel-tpl.hbs
+// Markup: markups/panel.html
 //
 // .panel-shadow - 带阴影
 // .panel-lg - 大面板
@@ -33,13 +24,13 @@
 //
 // Styleguide containers.panels.toolbar
 
-// Tab
+// Tools
 //
-// 带 Tab 的面板
+// 标题工具栏
 //
-// Markup: markups/panel-tab.html
+// Markup: markups/panel-tools.html
 //
-// Styleguide containers.panels.tab
+// Styleguide containers.panels.tools
 
 // Table
 //
@@ -52,6 +43,7 @@
 .panel {
 
     .panel-heading {
+        position: relative;
 
         &.clearfix {
             height: @panel-heading-height;
@@ -65,12 +57,6 @@
                     line-height: @line-height-base;
                 }
             }
-
-            .nav-tabs {
-                margin: 0;
-                border: 0;
-                top: @panel-heading-nav-top;
-            }
         }
     }
 
@@ -80,6 +66,19 @@
     }
 }
 
+.panel-tools {
+    position: absolute;
+    bottom: 4px;
+    right: @padding-base-horizontal;
+}
+
+.panel-tools > .nav-tabs {
+    border-bottom: 0;
+}
+
+.panel-tools.panel-tools-bottom {
+    bottom: 0;
+}
 
 
 .panel-shadow {
@@ -108,7 +107,7 @@
 }
 
 .panel-toolbar {
-    padding: @panel-footer-padding;
+    padding: @padding-small-vertical @padding-base-horizontal;
     background: @panel-footer-bg;
     border-bottom: 1px solid @panel-inner-border;
 }
@@ -140,4 +139,8 @@
 
 .panel-body.no-padding {
     padding: 1px\9 !important;
+}
+
+.panel-footer-sm {
+    padding: @padding-small-vertical @padding-base-horizontal;
 }

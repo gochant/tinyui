@@ -12,7 +12,8 @@
 // Styleguide patches.kendoui.selectable
 
 .selected,
-.k-state-selected {
+.k-state-selected,
+.table > tbody > tr.k-state-selected {  // 修复 .table hover 的样式冲突
     color: @k-selected-color;
     background-color: @k-selected-bg-color;
     border-color: @k-selected-border-color;

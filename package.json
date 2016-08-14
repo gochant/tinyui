@@ -10,8 +10,9 @@
     "grunt-contrib-jshint": "~0.10.0",
     "grunt-contrib-less": "^1.0.1",
     "grunt-contrib-nodeunit": "~0.4.1",
+    "grunt-contrib-pug": "^1.0.0",
     "grunt-contrib-watch": "~0.6.1",
     "grunt-includes": "^0.5.1",
-    "grunt-kss": "latest"
+    "grunt-kss": "^4.0.0"
   }
 }
