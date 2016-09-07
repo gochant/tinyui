@@ -16,6 +16,16 @@ module.exports = function (grunt) {
                 }
             }
         },
+        concat: {
+            variable: {
+                src: ['src/assets/bootstrap-flat/variables.less', 'src/less/variables.less'],
+                dest: 'dist/less/variables.less'
+            },
+            mixin: {
+                src: ['src/assets/bootstrap-flat/mixins.less', 'src/less/mixins.less'],
+                dest: 'dist/less/mixins.less'
+            }
+        },
         copy: {
             release: {
                 files: [{
@@ -27,11 +37,6 @@ module.exports = function (grunt) {
                     expand: true,
                     src: ['src/assets/bootstrap-flat/bootstrap.js'],
                     dest: 'dist/js/', flatten: true
-                }, {
-                    expand: true,
-                    src: ['src/assets/bootstrap-flat/*.less'],
-                    dest: 'dist/less/',
-                    flatten: true
                 }, {
                     expand: true,
                     src: ['src/fonts/*'],
@@ -104,9 +109,10 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-kss');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-pug');
+    grunt.loadNpmTasks('grunt-contrib-concat');
 
     // Default task.
-    grunt.registerTask('release', ['less', 'copy:release']);
+    grunt.registerTask('release', ['less', 'copy:release', 'concat']);
     grunt.registerTask('site', ['release', 'copy:site', 'pug', 'kss', 'clean:include']);
     grunt.registerTask('default', ['release']);
 
