@@ -2,7 +2,7 @@
   <script src="../assets/html5shiv/dist/html5shiv.js"></script>
   <script src="../assets/respond/dest/respond.min.js"></script>
 <![endif]--></head><body><div class="container"><!-- Navbar--><div class="bs-docs-section"><div class="row"><div class="col-lg-12"><div class="page-header"><h1 id="navbar">Navbar</h1></div></div></div><div class="row"><div class="col-lg-12"><div class="bs-component">
-<nav class="navbar navbar-default">
+<nav class="navbar {{modifier_class}}">
     <div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -276,18 +276,18 @@
     </tbody>
 </table>
 </div></div></div></div><!-- Forms--><div class="bs-docs-section"><div class="row"><div class="col-lg-12"><div class="page-header"><h1 id="forms">Forms</h1></div></div></div><div class="row"><div class="col-lg-6"><div class="bs-component"><div class="well">
-    <form class="form-horizontal">
+    <form class="form-horizontal {{modifier_class}}">
         <fieldset>
             <legend>Legend</legend>
             <div class="form-group">
-                <label for="inputEmail" class="col-lg-2 control-label">Email</label>
-                <div class="col-lg-10">
+                <label for="inputEmail" class="col-sm-2 control-label">Email</label>
+                <div class="col-sm-10">
                     <input type="text" class="form-control" id="inputEmail" placeholder="Email">
                 </div>
             </div>
             <div class="form-group">
-                <label for="inputPassword" class="col-lg-2 control-label">Password</label>
-                <div class="col-lg-10">
+                <label for="inputPassword" class="col-sm-2 control-label">Password</label>
+                <div class="col-sm-10">
                     <input type="password" class="form-control" id="inputPassword" placeholder="Password">
                     <div class="checkbox">
                         <label>
@@ -297,15 +297,15 @@
                 </div>
             </div>
             <div class="form-group">
-                <label for="textArea" class="col-lg-2 control-label">Textarea</label>
-                <div class="col-lg-10">
+                <label for="textArea" class="col-sm-2 control-label">Textarea</label>
+                <div class="col-sm-10">
                     <textarea class="form-control" rows="3" id="textArea"></textarea>
                     <span class="help-block">A longer block of help text that breaks onto a new line and may extend beyond one line.</span>
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-lg-2 control-label">Radios</label>
-                <div class="col-lg-10">
+                <label class="col-sm-2 control-label">Radios</label>
+                <div class="col-sm-10">
                     <div class="radio">
                         <label>
                             <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
@@ -321,8 +321,8 @@
                 </div>
             </div>
             <div class="form-group">
-                <label for="select" class="col-lg-2 control-label">Selects</label>
-                <div class="col-lg-10">
+                <label for="select" class="col-sm-2 control-label">Selects</label>
+                <div class="col-sm-10">
                     <select class="form-control" id="select">
                         <option>1</option>
                         <option>2</option>
@@ -341,11 +341,26 @@
                 </div>
             </div>
             <div class="form-group">
-                <div class="col-lg-10 col-lg-offset-2">
+                <label for="select" class="col-sm-2 control-label">Checkbox Inline</label>
+                <div class="col-sm-10">
+                    <div class="checkbox-group">
+                        <label class="checkbox-inline">
+                            <input type="checkbox" value="" /> Option1
+                        </label>
+                        <label class="checkbox-inline">
+                            <input type="checkbox" value="" /> Option2
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-10 col-sm-offset-2">
                     <button type="reset" class="btn btn-default">Cancel</button>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
             </div>
+
         </fieldset>
     </form>
 </div></div></div><div class="col-lg-4 col-lg-offset-1"><div class="bs-component"><div class="form-group">
@@ -777,4 +792,4 @@
         </div>
     </div>
 </div>
-</div></div><div id="source-modal" class="modal fade"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><button data-dismiss="modal" aria-hidden="true" class="close">&times;</button><h4 class="modal-title">Source Code</h4></div><div class="modal-body"><pre></pre></div></div></div></div><footer></footer><script src="../assets/jquery/dist/jquery.min.js"></script><script src="../assets/jquery.scrollbar/jquery.scrollbar.min.js"></script><script src="../assets/jquery.layout/dist/jquery.layout-latest.min.js"></script><script src="../assets/jquery.fixedheadertable.js"></script><script src="../assets/tiny/js/bootstrap.js"></script><script src="../assets/tiny/js/jquery.submenu.js"></script><script src="../assets/demo/bootswatch.js"></script><script src="../assets/demo/demo.js"></script></body></html>
+</div></div><div id="source-modal" class="modal fade"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><button data-dismiss="modal" aria-hidden="true" class="close">&times;</button><h4 class="modal-title">Source Code</h4></div><div class="modal-body"><pre></pre></div></div></div></div><footer></footer><script src="../assets/jquery/dist/jquery.min.js"></script><script src="../assets/jquery.scrollbar/jquery.scrollbar.min.js"></script><script src="../assets/jquery.layout/dist/jquery.layout-latest.min.js"></script><script src="../assets/jquery.fixedheadertable.js"></script><script src="../assets/tiny/js/bootstrap.js"></script><script src="../assets/tiny/js/tinybt.js"></script><script src="../assets/demo/bootswatch.js"></script><script src="../assets/demo/demo.js"></script></body></html>

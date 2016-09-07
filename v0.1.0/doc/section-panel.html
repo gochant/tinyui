@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<!--[if lte IE 6]>            <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IEMobile 7]>          <html class="no-js iem7" lang="en"> <![endif]-->
+<!--[if (IE 7)&(!IEMobile)]>  <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>                <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|(gt IEMobile 7)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+    <title>Tiny&#x27; Styleguide</title>
+
+  <meta name="description" content="">
+  <meta name="generator" content="kss-node">
+  <meta name="viewport" content="width=device-width">
+
+  <link href="public/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+  <link href="public/bootstrap-custom.css" rel="stylesheet" />
+  <link href="public/vs.css" rel="stylesheet" />
+  <link rel="stylesheet" href="public/kss.css">
+  <link rel="stylesheet" href="../assets/tiny/css/tiny.css">
+
+  <!--[if lte IE 8]>
+    <script src="public/html5shiv.js"></script>
+    <script src="public/respond.js"></script>
+    <script src="public/es5-shim.js"></script>
+  <![endif]-->
+
+</head>
+<body id="kss-node" class="no-skin">
+
+<div class="kss-sidebar kss-style">
+  <header class="kss-header">
+      <h1 class="kss-doc-title">
+          <span style="color:green;font-size: 140%;font-weight:bold;">Tiny&#x27;</span>
+            Styleguide
+          <i class="fa fa-leaf" style="color:green;vertical-align: super;"></i>
+      </h1>
+  </header>
+  <nav class="kss-nav">
+    <ul class="kss-nav__menu">
+      <li class="kss-nav__menu-item">
+        <a href="./">
+          <span class="kss-nav__ref">0</span
+          ><span class="kss-nav__name">Overview</span>
+        </a>
+      </li>
+      <li class="kss-nav__menu-item">
+        <a href="section-form.html">
+          <span class="kss-nav__ref">1</span
+          ><span class="kss-nav__name">表单 form</span>
+        </a>
+      </li>
+      <li class="kss-nav__menu-item">
+        <a href="section-header.html">
+          <span class="kss-nav__ref">2</span
+          ><span class="kss-nav__name">标题 Header</span>
+        </a>
+      </li>
+      <li class="kss-nav__menu-item">
+        <a href="section-icon.html">
+          <span class="kss-nav__ref">3</span
+          ><span class="kss-nav__name">字体图标 Font Icons</span>
+        </a>
+      </li>
+      <li class="kss-nav__menu-item">
+        <a href="section-panel.html">
+          <span class="kss-nav__ref">4</span
+          ><span class="kss-nav__name">面板 Panel</span>
+        </a>
+        <ul class="kss-nav__menu-child">
+            <li class="kss-nav__menu-item">
+              <a href="section-panel.html#kssref-panel-bootstrap">
+                <span class="kss-nav__ref">4.1</span
+                ><span class="kss-nav__name">Bootstrap</span>
+              </a>
+            </li>
+            <li class="kss-nav__menu-item">
+              <a href="section-panel.html#kssref-panel-extra">
+                <span class="kss-nav__ref">4.2</span
+                ><span class="kss-nav__name">Extra</span>
+              </a>
+            </li>
+            <li class="kss-nav__menu-item">
+              <a href="section-panel.html#kssref-panel-tab">
+                <span class="kss-nav__ref">4.3</span
+                ><span class="kss-nav__name">Tab</span>
+              </a>
+            </li>
+            <li class="kss-nav__menu-item">
+              <a href="section-panel.html#kssref-panel-table">
+                <span class="kss-nav__ref">4.4</span
+                ><span class="kss-nav__name">Table</span>
+              </a>
+            </li>
+            <li class="kss-nav__menu-item">
+              <a href="section-panel.html#kssref-panel-toolbar">
+                <span class="kss-nav__ref">4.5</span
+                ><span class="kss-nav__name">Toolbar</span>
+              </a>
+            </li>
+        </ul>
+      </li>
+      <li class="kss-nav__menu-item">
+        <a href="section-sidebar.html">
+          <span class="kss-nav__ref">5</span
+          ><span class="kss-nav__name">导航菜单 Sidebar</span>
+        </a>
+      </li>
+      <li class="kss-nav__menu-item">
+        <a href="section-tab.html">
+          <span class="kss-nav__ref">6</span
+          ><span class="kss-nav__name">选项卡 Tabs</span>
+        </a>
+      </li>
+      <li class="kss-nav__menu-item">
+        <a href="section-utility.html">
+          <span class="kss-nav__ref">7</span
+          ><span class="kss-nav__name">实用类 Utility</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
+<article role="main" class="kss-main">
+
+      <div     id="kssref-panel" class="kss-section kss-section--depth-1">
+
+    <div class="kss-style">
+      <h1 class="kss-title kss-title--level-1">
+        <a class="kss-title__permalink" href="#kssref-panel">
+          <span class="kss-title__ref">4</span
+          >面板 Panel
+          <span class="kss-title__permalink-hash"><i class="fa fa-link"></i></span>
+        </a>
+      </h1>
+
+
+      <div class="kss-description">
+        <p>通常用于界面元素的分组显示</p>
+
+      </div>
+    </div>
+
+
+      </div>
+      <section id="kssref-panel-bootstrap" class="kss-section kss-section--depth-2">
+
+    <div class="kss-style">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink" href="#kssref-panel-bootstrap">
+          <span class="kss-title__ref">4.1</span
+          >Bootstrap
+          <span class="kss-title__permalink-hash"><i class="fa fa-link"></i></span>
+        </a>
+      </h2>
+
+
+      <div class="kss-description">
+        <p>Bootstrap 的默认内容</p>
+
+      </div>
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Example
+        </div>
+          <div class="kss-modifier__item">
+        <div class="kss-modifier__example">
+          <div class="row">
+    <div class="col-lg-4">
+        <div class="bs-component">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    Basic panel
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">Panel heading</div>
+                <div class="panel-body">
+                    Panel content
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    Panel content
+                </div>
+                <div class="panel-footer">Panel footer</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="bs-component">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Panel primary</h3>
+                </div>
+                <div class="panel-body">
+                    Panel content
+                </div>
+            </div>
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Panel success</h3>
+                </div>
+                <div class="panel-body">
+                    Panel content
+                </div>
+            </div>
+            <div class="panel panel-warning">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Panel warning</h3>
+                </div>
+                <div class="panel-body">
+                    Panel content
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="bs-component">
+            <div class="panel panel-danger">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Panel danger</h3>
+                </div>
+                <div class="panel-body">
+                    Panel content
+                </div>
+            </div>
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Panel info</h3>
+                </div>
+                <div class="panel-body">
+                    Panel content
+                </div>
+            </div>
+            <div class="panel panel-transparent">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Panel Transparent</h3>
+                </div>
+                <div class="panel-body">
+                    Panel content
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+        </div>
+          </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="lang-html html"><code data-language="html" class="html">&lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;col-lg-4&quot;&gt;
+        &lt;div class=&quot;bs-component&quot;&gt;
+            &lt;div class=&quot;panel panel-default&quot;&gt;
+                &lt;div class=&quot;panel-body&quot;&gt;
+                    Basic panel
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;panel panel-default&quot;&gt;
+                &lt;div class=&quot;panel-heading&quot;&gt;Panel heading&lt;/div&gt;
+                &lt;div class=&quot;panel-body&quot;&gt;
+                    Panel content
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;panel panel-default&quot;&gt;
+                &lt;div class=&quot;panel-body&quot;&gt;
+                    Panel content
+                &lt;/div&gt;
+                &lt;div class=&quot;panel-footer&quot;&gt;Panel footer&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;col-lg-4&quot;&gt;
+        &lt;div class=&quot;bs-component&quot;&gt;
+            &lt;div class=&quot;panel panel-primary&quot;&gt;
+                &lt;div class=&quot;panel-heading&quot;&gt;
+                    &lt;h3 class=&quot;panel-title&quot;&gt;Panel primary&lt;/h3&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;panel-body&quot;&gt;
+                    Panel content
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;panel panel-success&quot;&gt;
+                &lt;div class=&quot;panel-heading&quot;&gt;
+                    &lt;h3 class=&quot;panel-title&quot;&gt;Panel success&lt;/h3&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;panel-body&quot;&gt;
+                    Panel content
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;panel panel-warning&quot;&gt;
+                &lt;div class=&quot;panel-heading&quot;&gt;
+                    &lt;h3 class=&quot;panel-title&quot;&gt;Panel warning&lt;/h3&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;panel-body&quot;&gt;
+                    Panel content
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;col-lg-4&quot;&gt;
+        &lt;div class=&quot;bs-component&quot;&gt;
+            &lt;div class=&quot;panel panel-danger&quot;&gt;
+                &lt;div class=&quot;panel-heading&quot;&gt;
+                    &lt;h3 class=&quot;panel-title&quot;&gt;Panel danger&lt;/h3&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;panel-body&quot;&gt;
+                    Panel content
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;panel panel-info&quot;&gt;
+                &lt;div class=&quot;panel-heading&quot;&gt;
+                    &lt;h3 class=&quot;panel-title&quot;&gt;Panel info&lt;/h3&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;panel-body&quot;&gt;
+                    Panel content
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;panel panel-transparent&quot;&gt;
+                &lt;div class=&quot;panel-heading&quot;&gt;
+                    &lt;h3 class=&quot;panel-title&quot;&gt;Panel Transparent&lt;/h3&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;panel-body&quot;&gt;
+                    Panel content
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-panel-extra" class="kss-section kss-section--depth-2">
+
+    <div class="kss-style">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink" href="#kssref-panel-extra">
+          <span class="kss-title__ref">4.2</span
+          >Extra
+          <span class="kss-title__permalink-hash"><i class="fa fa-link"></i></span>
+        </a>
+      </h2>
+
+
+      <div class="kss-description">
+        <p>额外的扩展</p>
+
+      </div>
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Examples
+        </div>
+          <div class="kss-modifier__item">
+        <!--<div class="kss-modifier__default-name kss-style">
+          (default)
+        </div>-->
+        <div class="kss-modifier__example">
+          <div class="panel panel-default [modifier class]">
+    <div class="panel-heading">Panel heading</div>
+    <div class="panel-body">
+        Panel content
+    </div>
+</div>
+        </div>
+          </div>
+          <div class="kss-modifier__item">
+              <div class="kss-modifier__name kss-style">
+                  .panel-shadow
+              </div>
+              <div class="kss-modifier__description kss-style">
+                  带阴影
+              </div>
+              <div class="kss-modifier__example">
+                  <div class="panel panel-default panel-shadow">
+    <div class="panel-heading">Panel heading</div>
+    <div class="panel-body">
+        Panel content
+    </div>
+</div>
+              </div>
+          </div>
+
+          <div class="kss-modifier__item">
+              <div class="kss-modifier__name kss-style">
+                  .panel-lg
+              </div>
+              <div class="kss-modifier__description kss-style">
+                  大面板
+              </div>
+              <div class="kss-modifier__example">
+                  <div class="panel panel-default panel-lg">
+    <div class="panel-heading">Panel heading</div>
+    <div class="panel-body">
+        Panel content
+    </div>
+</div>
+              </div>
+          </div>
+
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="lang-html html"><code data-language="html" class="html">&lt;div class=&quot;panel panel-default [modifier class]&quot;&gt;
+    &lt;div class=&quot;panel-heading&quot;&gt;Panel heading&lt;/div&gt;
+    &lt;div class=&quot;panel-body&quot;&gt;
+        Panel content
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-panel-tab" class="kss-section kss-section--depth-2">
+
+    <div class="kss-style">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink" href="#kssref-panel-tab">
+          <span class="kss-title__ref">4.3</span
+          >Tab
+          <span class="kss-title__permalink-hash"><i class="fa fa-link"></i></span>
+        </a>
+      </h2>
+
+
+      <div class="kss-description">
+        <p>tab</p>
+
+      </div>
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Example
+        </div>
+          <div class="kss-modifier__item">
+        <div class="kss-modifier__example">
+          <div class="panel panel-default">
+    <div class="panel-heading clearfix">
+        <h3 class="panel-title pull-left">Panel With Tab</h3>
+        <div class="panel-toolbar pull-right">
+            <ul class="nav nav-tabs" id="myTab2">
+                <li class="active">
+                    <a data-toggle="tab" href="#home2">Home</a>
+                </li>
+
+                <li>
+                    <a data-toggle="tab" href="#profile2">Profile</a>
+                </li>
+
+                <li>
+                    <a data-toggle="tab" href="#info2">Info</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="panel-body">
+        Panel content
+    </div>
+</div>
+
+        </div>
+          </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="lang-html html"><code data-language="html" class="html">&lt;div class=&quot;panel panel-default&quot;&gt;
+    &lt;div class=&quot;panel-heading clearfix&quot;&gt;
+        &lt;h3 class=&quot;panel-title pull-left&quot;&gt;Panel With Tab&lt;/h3&gt;
+        &lt;div class=&quot;panel-toolbar pull-right&quot;&gt;
+            &lt;ul class=&quot;nav nav-tabs&quot; id=&quot;myTab2&quot;&gt;
+                &lt;li class=&quot;active&quot;&gt;
+                    &lt;a data-toggle=&quot;tab&quot; href=&quot;#home2&quot;&gt;Home&lt;/a&gt;
+                &lt;/li&gt;
+
+                &lt;li&gt;
+                    &lt;a data-toggle=&quot;tab&quot; href=&quot;#profile2&quot;&gt;Profile&lt;/a&gt;
+                &lt;/li&gt;
+
+                &lt;li&gt;
+                    &lt;a data-toggle=&quot;tab&quot; href=&quot;#info2&quot;&gt;Info&lt;/a&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;panel-body&quot;&gt;
+        Panel content
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-panel-table" class="kss-section kss-section--depth-2">
+
+    <div class="kss-style">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink" href="#kssref-panel-table">
+          <span class="kss-title__ref">4.4</span
+          >Table
+          <span class="kss-title__permalink-hash"><i class="fa fa-link"></i></span>
+        </a>
+      </h2>
+
+
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Example
+        </div>
+          <div class="kss-modifier__item">
+        <div class="kss-modifier__example">
+          <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">Panel With Table</h3>
+    </div>
+    <table class="table table-striped table-bordered table-hover">
+        <thead class="thin-border-bottom">
+            <tr>
+                <th>
+                    <i class="ace-icon fa fa-user"></i>
+                    User
+                </th>
+
+                <th>
+                    <i>@</i>
+                    Email
+                </th>
+                <th class="hidden-480">Status</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td class="">Alex</td>
+
+                <td>
+                    <a href="#">alex@email.com</a>
+                </td>
+
+                <td class="hidden-480">
+                    <span class="label label-warning">Pending</span>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="">Fred</td>
+
+                <td>
+                    <a href="#">fred@email.com</a>
+                </td>
+
+                <td class="hidden-480">
+                    <span class="label label-success arrowed-in arrowed-in-right">Approved</span>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="">Jack</td>
+
+                <td>
+                    <a href="#">jack@email.com</a>
+                </td>
+
+                <td class="hidden-480">
+                    <span class="label label-warning">Pending</span>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="">John</td>
+
+                <td>
+                    <a href="#">john@email.com</a>
+                </td>
+
+                <td class="hidden-480">
+                    <span class="label label-inverse arrowed">Blocked</span>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="">James</td>
+
+                <td>
+                    <a href="#">james@email.com</a>
+                </td>
+
+                <td class="hidden-480">
+                    <span class="label label-info arrowed-in arrowed-in-right">Online</span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+
+        </div>
+          </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="lang-html html"><code data-language="html" class="html">&lt;div class=&quot;panel panel-default&quot;&gt;
+    &lt;div class=&quot;panel-heading&quot;&gt;
+        &lt;h3 class=&quot;panel-title&quot;&gt;Panel With Table&lt;/h3&gt;
+    &lt;/div&gt;
+    &lt;table class=&quot;table table-striped table-bordered table-hover&quot;&gt;
+        &lt;thead class=&quot;thin-border-bottom&quot;&gt;
+            &lt;tr&gt;
+                &lt;th&gt;
+                    &lt;i class=&quot;ace-icon fa fa-user&quot;&gt;&lt;/i&gt;
+                    User
+                &lt;/th&gt;
+
+                &lt;th&gt;
+                    &lt;i&gt;@&lt;/i&gt;
+                    Email
+                &lt;/th&gt;
+                &lt;th class=&quot;hidden-480&quot;&gt;Status&lt;/th&gt;
+            &lt;/tr&gt;
+        &lt;/thead&gt;
+
+        &lt;tbody&gt;
+            &lt;tr&gt;
+                &lt;td class=&quot;&quot;&gt;Alex&lt;/td&gt;
+
+                &lt;td&gt;
+                    &lt;a href=&quot;#&quot;&gt;alex@email.com&lt;/a&gt;
+                &lt;/td&gt;
+
+                &lt;td class=&quot;hidden-480&quot;&gt;
+                    &lt;span class=&quot;label label-warning&quot;&gt;Pending&lt;/span&gt;
+                &lt;/td&gt;
+            &lt;/tr&gt;
+
+            &lt;tr&gt;
+                &lt;td class=&quot;&quot;&gt;Fred&lt;/td&gt;
+
+                &lt;td&gt;
+                    &lt;a href=&quot;#&quot;&gt;fred@email.com&lt;/a&gt;
+                &lt;/td&gt;
+
+                &lt;td class=&quot;hidden-480&quot;&gt;
+                    &lt;span class=&quot;label label-success arrowed-in arrowed-in-right&quot;&gt;Approved&lt;/span&gt;
+                &lt;/td&gt;
+            &lt;/tr&gt;
+
+            &lt;tr&gt;
+                &lt;td class=&quot;&quot;&gt;Jack&lt;/td&gt;
+
+                &lt;td&gt;
+                    &lt;a href=&quot;#&quot;&gt;jack@email.com&lt;/a&gt;
+                &lt;/td&gt;
+
+                &lt;td class=&quot;hidden-480&quot;&gt;
+                    &lt;span class=&quot;label label-warning&quot;&gt;Pending&lt;/span&gt;
+                &lt;/td&gt;
+            &lt;/tr&gt;
+
+            &lt;tr&gt;
+                &lt;td class=&quot;&quot;&gt;John&lt;/td&gt;
+
+                &lt;td&gt;
+                    &lt;a href=&quot;#&quot;&gt;john@email.com&lt;/a&gt;
+                &lt;/td&gt;
+
+                &lt;td class=&quot;hidden-480&quot;&gt;
+                    &lt;span class=&quot;label label-inverse arrowed&quot;&gt;Blocked&lt;/span&gt;
+                &lt;/td&gt;
+            &lt;/tr&gt;
+
+            &lt;tr&gt;
+                &lt;td class=&quot;&quot;&gt;James&lt;/td&gt;
+
+                &lt;td&gt;
+                    &lt;a href=&quot;#&quot;&gt;james@email.com&lt;/a&gt;
+                &lt;/td&gt;
+
+                &lt;td class=&quot;hidden-480&quot;&gt;
+                    &lt;span class=&quot;label label-info arrowed-in arrowed-in-right&quot;&gt;Online&lt;/span&gt;
+                &lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/tbody&gt;
+    &lt;/table&gt;
+
+&lt;/div&gt;
+</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-panel-toolbar" class="kss-section kss-section--depth-2">
+
+    <div class="kss-style">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink" href="#kssref-panel-toolbar">
+          <span class="kss-title__ref">4.5</span
+          >Toolbar
+          <span class="kss-title__permalink-hash"><i class="fa fa-link"></i></span>
+        </a>
+      </h2>
+
+
+      <div class="kss-description">
+        <p>放置工具条</p>
+
+      </div>
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Example
+        </div>
+          <div class="kss-modifier__item">
+        <div class="kss-modifier__example">
+          <div class="panel panel-default">
+    <div class="panel-heading ">
+        <h3 class="panel-title">Panel Width Toolbar</h3>
+    </div>
+    <div class="panel-toolbar">
+        <div class="btn-toolbar">
+            <div class="btn-group">
+                <button class="btn btn-default">Test</button>
+            </div>
+            <div class="btn-group">
+                <button class="btn btn-default">Test</button>
+            </div>
+            <div class="btn-group">
+                <button class="btn btn-default">Test</button>
+            </div>
+            <div class="btn-group">
+                <button class="btn btn-default">Test</button>
+            </div>
+        </div>
+    </div>
+    <div class="panel-body">
+        <div class="alert alert-info">
+            Nunc aliquam enim ut arcu aliquet adipiscing. Fusce dignissim volutpat justo non consectetur. Nulla fringilla eleifend consectetur.
+        </div>
+    </div>
+    <div class="panel-footer">
+        <div class="btn-toolbar">
+            <button class="btn btn-danger pull-left">
+                <i class="tiny-icon fa fa-cancel"></i>
+                <span class="bigger-110">I don't accept</span>
+            </button>
+
+            <button class="btn btn-success pull-right">
+                <span class="bigger-110">I accept</span>
+                <i class="tiny-icon fa fa-right-big"></i>
+            </button>
+        </div>
+
+    </div>
+</div>
+
+        </div>
+          </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="lang-html html"><code data-language="html" class="html">&lt;div class=&quot;panel panel-default&quot;&gt;
+    &lt;div class=&quot;panel-heading &quot;&gt;
+        &lt;h3 class=&quot;panel-title&quot;&gt;Panel Width Toolbar&lt;/h3&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;panel-toolbar&quot;&gt;
+        &lt;div class=&quot;btn-toolbar&quot;&gt;
+            &lt;div class=&quot;btn-group&quot;&gt;
+                &lt;button class=&quot;btn btn-default&quot;&gt;Test&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;btn-group&quot;&gt;
+                &lt;button class=&quot;btn btn-default&quot;&gt;Test&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;btn-group&quot;&gt;
+                &lt;button class=&quot;btn btn-default&quot;&gt;Test&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;btn-group&quot;&gt;
+                &lt;button class=&quot;btn btn-default&quot;&gt;Test&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;panel-body&quot;&gt;
+        &lt;div class=&quot;alert alert-info&quot;&gt;
+            Nunc aliquam enim ut arcu aliquet adipiscing. Fusce dignissim volutpat justo non consectetur. Nulla fringilla eleifend consectetur.
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;panel-footer&quot;&gt;
+        &lt;div class=&quot;btn-toolbar&quot;&gt;
+            &lt;button class=&quot;btn btn-danger pull-left&quot;&gt;
+                &lt;i class=&quot;tiny-icon fa fa-cancel&quot;&gt;&lt;/i&gt;
+                &lt;span class=&quot;bigger-110&quot;&gt;I don&#x27;t accept&lt;/span&gt;
+            &lt;/button&gt;
+
+            &lt;button class=&quot;btn btn-success pull-right&quot;&gt;
+                &lt;span class=&quot;bigger-110&quot;&gt;I accept&lt;/span&gt;
+                &lt;i class=&quot;tiny-icon fa fa-right-big&quot;&gt;&lt;/i&gt;
+            &lt;/button&gt;
+        &lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+      </div>
+
+      </section>
+</article>
+
+<!-- SCRIPTS -->
+<script src="public/kss.js"></script>
+<script src="public/highlight.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
+<script src="../assets/jquery/dist/jquery.min.js"></script>
+<script src="../assets/tiny/js/bootstrap.js"></script>
+<script src="../assets/tiny/js/jquery.submenu.js"></script>
+<script src="../assets/demo.js"></script>
+
+
+
+<!-- Automatically generated using <a href="https://github.com/kss-node/kss-node">kss-node</a>. -->
+</body>
+</html>

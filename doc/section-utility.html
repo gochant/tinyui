@@ -6,7 +6,7 @@
 <!--[if (gte IE 9)|(gt IEMobile 7)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-    <title>Tiny&#x27; Styleguide</title>
+    <title> Styleguide</title>
 
   <meta name="description" content="">
   <meta name="generator" content="kss-node">
@@ -30,7 +30,7 @@
 <div class="kss-sidebar kss-style">
   <header class="kss-header">
       <h1 class="kss-doc-title">
-          <span style="color:green;font-size: 140%;font-weight:bold;">Tiny&#x27;</span>
+          <span style="color:green;font-size: 140%;font-weight:bold;"></span>
             Styleguide
           <i class="fa fa-leaf" style="color:green;vertical-align: super;"></i>
       </h1>
@@ -62,39 +62,63 @@
         </a>
       </li>
       <li class="kss-nav__menu-item">
-        <a href="section-panel.html">
+        <a href="section-loader.html">
           <span class="kss-nav__ref">4</span
+          ><span class="kss-nav__name">加载进度 Loading</span>
+        </a>
+      </li>
+      <li class="kss-nav__menu-item">
+        <a href="section-navbar.html">
+          <span class="kss-nav__ref">5</span
+          ><span class="kss-nav__name">横向导航 Navbar</span>
+        </a>
+      </li>
+      <li class="kss-nav__menu-item">
+        <a href="section-panel.html">
+          <span class="kss-nav__ref">6</span
           ><span class="kss-nav__name">面板 Panel</span>
         </a>
       </li>
       <li class="kss-nav__menu-item">
         <a href="section-sidebar.html">
-          <span class="kss-nav__ref">5</span
-          ><span class="kss-nav__name">导航菜单 Sidebar</span>
+          <span class="kss-nav__ref">7</span
+          ><span class="kss-nav__name">侧边导航 Sidebar</span>
         </a>
       </li>
       <li class="kss-nav__menu-item">
         <a href="section-tab.html">
-          <span class="kss-nav__ref">6</span
+          <span class="kss-nav__ref">8</span
           ><span class="kss-nav__name">选项卡 Tabs</span>
         </a>
       </li>
       <li class="kss-nav__menu-item">
         <a href="section-utility.html">
-          <span class="kss-nav__ref">7</span
+          <span class="kss-nav__ref">9</span
           ><span class="kss-nav__name">实用类 Utility</span>
         </a>
         <ul class="kss-nav__menu-child">
             <li class="kss-nav__menu-item">
               <a href="section-utility.html#kssref-utility-box">
-                <span class="kss-nav__ref">7.1</span
-                ><span class="kss-nav__name">Box</span>
+                <span class="kss-nav__ref">9.1</span
+                ><span class="kss-nav__name">Box（废弃）</span>
+              </a>
+            </li>
+            <li class="kss-nav__menu-item">
+              <a href="section-utility.html#kssref-utility-flexbox">
+                <span class="kss-nav__ref">9.2</span
+                ><span class="kss-nav__name">Flexbox</span>
               </a>
             </li>
             <li class="kss-nav__menu-item">
               <a href="section-utility.html#kssref-utility-helper">
-                <span class="kss-nav__ref">7.2</span
+                <span class="kss-nav__ref">9.3</span
                 ><span class="kss-nav__name">Helper</span>
+              </a>
+            </li>
+            <li class="kss-nav__menu-item">
+              <a href="section-utility.html#kssref-utility-rowstatic">
+                <span class="kss-nav__ref">9.4</span
+                ><span class="kss-nav__name">Static Row</span>
               </a>
             </li>
         </ul>
@@ -109,7 +133,7 @@
     <div class="kss-style">
       <h1 class="kss-title kss-title--level-1">
         <a class="kss-title__permalink" href="#kssref-utility">
-          <span class="kss-title__ref">7</span
+          <span class="kss-title__ref">9</span
           >实用类 Utility
           <span class="kss-title__permalink-hash"><i class="fa fa-link"></i></span>
         </a>
@@ -129,15 +153,16 @@
     <div class="kss-style">
       <h2 class="kss-title kss-title--level-2">
         <a class="kss-title__permalink" href="#kssref-utility-box">
-          <span class="kss-title__ref">7.1</span
-          >Box
+          <span class="kss-title__ref">9.1</span
+          >Box（废弃）
           <span class="kss-title__permalink-hash"><i class="fa fa-link"></i></span>
         </a>
       </h2>
 
 
       <div class="kss-description">
-        <p>使用表格布局，实现界面高度的自适应。<code>.box</code>元素（即父元素）要有高度，否则无法自动计算</p>
+        <p>使用表格布局（display: table），实现界面高度的自适应。<code>.box</code>元素（即父元素）要有高度，否则无法自动计算
+<strong>注意：</strong> 这种方法在高版本的浏览器中有兼容性问题</p>
 <p>由于 table-row 的百分比高度规范未定义，在IE10及以下的IE浏览器实现中，其内部元素无法应用父元素百分比高度
 需要引入 tiny.js 修复此问题</p>
 
@@ -176,12 +201,59 @@
       </div>
 
       </section>
+      <section id="kssref-utility-flexbox" class="kss-section kss-section--depth-2">
+
+    <div class="kss-style">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink" href="#kssref-utility-flexbox">
+          <span class="kss-title__ref">9.2</span
+          >Flexbox
+          <span class="kss-title__permalink-hash"><i class="fa fa-link"></i></span>
+        </a>
+      </h2>
+
+
+      <div class="kss-description">
+        <p>使用 flexbox 实现高度自适应的布局</p>
+<p> <a href="http://caniuse.com/#search=flex">兼容性</a></p>
+
+      </div>
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Example
+        </div>
+          <div class="kss-modifier__item">
+        <div class="kss-modifier__example">
+          <div class="flexbox" style="height:300px;">
+    <div style="height:30px;background:#ccc;"></div>
+    <div class="grow">
+        <div style="height:800px;background:#aaa;"></div>
+    </div>
+    <div style="height:30px;background:#ccc;"></div>
+</div>
+        </div>
+          </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="lang-html html"><code data-language="html" class="html">&lt;div class=&quot;flexbox&quot; style=&quot;height:300px;&quot;&gt;
+    &lt;div style=&quot;height:30px;background:#ccc;&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;grow&quot;&gt;
+        &lt;div style=&quot;height:800px;background:#aaa;&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div style=&quot;height:30px;background:#ccc;&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      </section>
       <section id="kssref-utility-helper" class="kss-section kss-section--depth-2">
 
     <div class="kss-style">
       <h2 class="kss-title kss-title--level-2">
         <a class="kss-title__permalink" href="#kssref-utility-helper">
-          <span class="kss-title__ref">7.2</span
+          <span class="kss-title__ref">9.3</span
           >Helper
           <span class="kss-title__permalink-hash"><i class="fa fa-link"></i></span>
         </a>
@@ -446,6 +518,66 @@
     &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-utility-rowstatic" class="kss-section kss-section--depth-2">
+
+    <div class="kss-style">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink" href="#kssref-utility-rowstatic">
+          <span class="kss-title__ref">9.4</span
+          >Static Row
+          <span class="kss-title__permalink-hash"><i class="fa fa-link"></i></span>
+        </a>
+      </h2>
+
+
+      <div class="kss-description">
+        <p>固定的栅格布局（常用在 flexbox 内部形成多栏自适应布局）</p>
+
+      </div>
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Example
+        </div>
+          <div class="kss-modifier__item">
+        <div class="kss-modifier__example">
+          <div class="flexbox scroll-x" style="height:300px;">
+    <div style="height:30px;background:#ccc;"></div>
+    <div class="grow row-container">
+        <div class="row row-static">
+            <div class="col-static col-xs-3 no-padding">
+                <div style="height:400px;background:#999;"></div>
+            </div>
+            <div class="col-static col-xs-9 col-xs-offset-3 no-padding">
+                <div style="height:800px;background:#aaa;"></div>
+            </div>
+        </div>
+    </div>
+    <div style="height:30px;background:#ccc;"></div>
+</div>
+        </div>
+          </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="lang-html html"><code data-language="html" class="html">&lt;div class=&quot;flexbox scroll-x&quot; style=&quot;height:300px;&quot;&gt;
+    &lt;div style=&quot;height:30px;background:#ccc;&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;grow row-container&quot;&gt;
+        &lt;div class=&quot;row row-static&quot;&gt;
+            &lt;div class=&quot;col-static col-xs-3 no-padding&quot;&gt;
+                &lt;div style=&quot;height:400px;background:#999;&quot;&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;col-static col-xs-9 col-xs-offset-3 no-padding&quot;&gt;
+                &lt;div style=&quot;height:800px;background:#aaa;&quot;&gt;&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div style=&quot;height:30px;background:#ccc;&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
       </div>
 
       </section>
